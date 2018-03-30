@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <!--忽略了public的路径-->
+  <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css' />
+  <link rel='stylesheet' href='/stylesheets/font-awesome.min.css' />
+  <link rel='stylesheet' href='/stylesheets/ionicons.min.css' />
+  <link rel='stylesheet' href='/lib/admin-lte/dist/css/AdminLTE.min.css' />
+  <link rel='stylesheet' href='/lib/admin-lte/dist/css/skins/skin-blue.min.css' />
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <!-- Main Header -->
+    <% include header.ejs %>
+  <!-- Left side column. contains the logo and sidebar -->
+    <% include menu.ejs %>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Your Page Content Here -->
+
+      <div class="box">
+        <div class="box-header with-border">
+          <h3 class="box-title">
+            活动列表
+            <button class="btn btn-sm btn-success " onclick="toAddActive()">
+              <span class="glyphicon glyphicon-plus"></span>
+              添加
+            </button>
+          </h3>
+
+          <button class="btn btn-sm btn-default pull-right">导入数据</button>
+          <button class="btn btn-sm btn-info pull-right">导出数据</button>
+        </div>
+
+        <!-- /.box-header -->
+        <div class="box-body">
+          <table class="table table-bordered">
+            <tr>
+              <th style="width: 10px">#</th>
+              <th>activeID</th>
+              <th>activeName</th>
+              <th>activeTime</th>
+              <th>activeAddress</th>
+              <th>activeImages</th>
+              <th>activeLinkSrc</th>
+              <!-- <th>activeLinkImg</th> -->
+              <th>操作</th>
+            </tr>
+              <% for(var i = 0;i<result.length;i++){ %>
+            <tr>
+              <td><%= i+1 %></td>
+              <td><%= result[i].activeID %></td>
+              <td><%= result[i].activeName %></td>
+              <td><%= result[i].activeTime %></td>
+              <td><%= result[i].activeAddress %></td>
+              <td>
+                <img src="<%= result[i].activeImages %>" alt="11111" style="width: 50px;">
+              </td>
+              <td><%= result[i].activeLinkSrc %></td>
+              <!-- <td><%= result[i].activeLinkImg %></td> -->
+              <td>
+                <button class="btn btn-xs btn-warning" onclick="toUpdateActive('<%= result[i].activeID %>') ">
+                  <span class="glyphicon glyphicon-edit"></span>
+                  编辑
+                </button>
+                <button class="btn btn-xs btn-danger" onclick="toDeleteActive('<%= result[i].activeID %>')">
+                  <span class="glyphicon glyphicon-trash"></span>
+                  删除
+                </button>
+              </td>
+            </tr>
+
+              <% } %>
+
+          </table>
+        </div>
+       <!-- /.box-body -->
+        <div class="box-footer clearfix">
+          <ul class="pagination pagination-sm no-margin pull-right">
+            <li ><a  href="/active?limitNum=5&pageCode=0">&laquo;</a></li>
+              <% for(var i = 0; i < totalPage; i++) { %>
+            <li class="<%= pageCode == i ? 'active' : ''%>"><a href="/active?limitNum=5&pageCode=<%= i %>"><%= i+1 %></a></li>
+              <% }%>
+
+            <li ><a href="/active?limitNum=5&pageCode=<%= totalPage * 1 - 1 %>">&raquo;</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+    <% include footer.ejs %>
+
+
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<script src="/javascripts/jquery.min.js"></script>
+<script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/javascripts/app.min.js"></script>
+<script>
+    function toAddActive(){
+        window.location.href='/addActive';
+    }
+    function toUpdateActive(activeID){
+        window.location.href='/updateActive?activeID='+activeID;
+    }
+    function toDeleteActive(activeID){
+        window.location.href='/deleteActive?activeID='+activeID;
+    }
+</script>
+</body>
+</html>

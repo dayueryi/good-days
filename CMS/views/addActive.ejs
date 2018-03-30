@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <!--忽略了public的路径-->
+    <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='/stylesheets/font-awesome.min.css' />
+    <link rel='stylesheet' href='/stylesheets/ionicons.min.css' />
+    <link rel='stylesheet' href='/lib/admin-lte/dist/css/AdminLTE.min.css' />
+    <link rel='stylesheet' href='/lib/admin-lte/dist/css/skins/skin-blue.min.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+    <!-- Main Header -->
+    <% include header.ejs %>
+    <!-- Left side column. contains the logo and sidebar -->
+    <% include menu.ejs %>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+
+        <!-- Main content -->
+        <section class="content">
+
+            <!-- Your Page Content Here -->
+
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">添加活动</h3>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+                <form class="form-horizontal" enctype="multipart/form-data" action="/addActiveAction" method="post">
+                    <div class="box-body">
+                            <div class="form-group">
+                                    <label for="activeID" class="col-sm-2 control-label">activeID</label>
+        
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control"  value="" name="activeID" placeholder="activeID">
+                                    </div>
+                                </div>
+                        <div class="form-group">
+                            <label for="activeName" class="col-sm-2 control-label">activeName</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control"  value="" name="activeName" placeholder="activeName">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="activeTime" class="col-sm-2 control-label">activeTime</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control"  value="" name="activeTime" placeholder="activeTime">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="activeAddress" class="col-sm-2 control-label">activeAddress</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control"  value="" name="activeAddress" placeholder="activeAddress">
+                            </div>
+                        </div>
+                        
+
+                       
+                        <div class="form-group">
+                            <label for="activeImages" class="col-sm-2 control-label">activeImages</label>
+
+                            <div class="col-sm-10">
+                                <input type="file" class="form-control" value="" name="activeImages" placeholder="activeImages">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="activeLinkSrc" class="col-sm-2 control-label">activeLinkSrc</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value="" name="activeLinkSrc" placeholder="activeLinkSrc">
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <!-- /.box-body -->
+
+                    <div class="box-footer">
+                        <div class="form-group">
+                            <label for="alt" class="col-sm-2 control-label sr-only">alt</label>
+                            <div class="col-sm-10">
+                                <button type="submit" class="btn btn-info pull-left">添加active</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-footer -->
+                </form>
+            </div>
+
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Main Footer -->
+    <% include footer.ejs %>
+
+
+    <!-- Add the sidebar's background. This div must be placed
+         immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
+</div>
+<script src="/javascripts/jquery.min.js"></script>
+<script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/javascripts/app.min.js"></script>
+
+</body>
+</html>

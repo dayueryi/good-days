@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <!--忽略了public的路径-->
+  <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css' />
+  <link rel='stylesheet' href='/stylesheets/font-awesome.min.css' />
+  <link rel='stylesheet' href='/stylesheets/ionicons.min.css' />
+  <link rel='stylesheet' href='/lib/admin-lte/dist/css/AdminLTE.min.css' />
+  <link rel='stylesheet' href='/lib/admin-lte/dist/css/skins/skin-blue.min.css' />
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <!-- Main Header -->
+  <% include header.ejs %>
+  <!-- Left side column. contains the logo and sidebar -->
+  <% include menu.ejs %>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+
+    <!-- Main content -->
+    <section class="content">
+      <!-- Your Page Content Here -->
+      <div class="box">
+        <div class="box-header with-border">
+          <h3 class="box-title">订单列表
+            <button class="btn btn-sm btn-success " onclick="toAddOrder()">
+              <span class="glyphicon glyphicon-plus"></span>
+              添加
+            </button>
+          </h3>
+
+          <button class="btn btn-sm btn-default pull-right">导入数据</button>
+          <button class="btn btn-sm btn-info pull-right">导出数据</button>
+        </div>
+
+        <!-- /.box-header -->
+        <div class="box-body">
+          <table class="table table-bordered">
+            <tr>
+              <th style="width: 10px">#</th>
+              <th>orderID</th>
+              <th>productID</th>
+              <th>userID</th>
+              <th>操作</th>
+            </tr>
+              <% for(var i = 0;i<result.length;i++){ %>
+            <tr>
+              <td><%= i+1 %></td>
+              <td><%= result[i].orderID %></td>
+              <td><%= result[i].productID %></td>
+              <td><%= result[i].userID %></td>
+              <td>
+                <button class="btn btn-xs btn-warning" onclick="toUpdateOrder('<%-  result[i].orderID %>')">
+                  <span class="glyphicon glyphicon-edit"></span>
+                  编辑
+                </button>
+                <button class="btn btn-xs btn-danger" onclick="toDeleteOrder('<%- result[i].orderID %>')">
+                  <span class="glyphicon glyphicon-trash"></span>
+                  删除
+                </button>
+              </td>
+            </tr>
+              <%  } %>
+
+          </table>
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer clearfix">
+          <ul class="pagination pagination-sm no-margin pull-right">
+            <li ><a  href="/order?limitNum=4&pageCode=0">&laquo;</a></li>
+              <% for(var i = 0; i < totalPage; i++) { %>
+            <li class="<%= pageCode == i ? 'active' : ''%>"><a href="/order?limitNum=4&pageCode=<%= i %>"><%= i+1 %></a></li>
+              <% }%>
+
+            <li ><a href="/order?limitNum=4&pageCode=<%= totalPage * 1 - 1 %>">&raquo;</a></li>
+
+          </ul>
+        </div>
+      </div>
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+  <% include footer.ejs %>
+
+
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<script src="/javascripts/jquery.min.js"></script>
+<script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/javascripts/app.min.js"></script>
+<script>
+    function toAddOrder() {
+        window.location.href = "/order/addOrder";
+    }
+    function toUpdateOrder(orderID) {
+        window.location.href = "/order/updateOrder?orderID="+orderID;
+    }
+    function toDeleteOrder(orderID){
+        window.location.href = "/order/deleteOrder?orderID="+orderID;
+    }
+</script>
+</body>
+</html>
