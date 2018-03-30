@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <!--忽略了public的路径-->
+    <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='/stylesheets/font-awesome.min.css' />
+    <link rel='stylesheet' href='/stylesheets/ionicons.min.css' />
+    <link rel='stylesheet' href='/lib/admin-lte/dist/css/AdminLTE.min.css' />
+    <link rel='stylesheet' href='/lib/admin-lte/dist/css/skins/skin-blue.min.css' />
+    <link rel='stylesheet' href='/lib/ckeditor/ckeditor.js'/>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+    <% include header.ejs %>
+   
+    <% include menu.ejs %>
+
+ 
+    <div class="content-wrapper">
+        
+        <section class="content">
+
+
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">添加新闻</h3>
+                </div>
+
+                <!-- form start -->
+                <form class="form-horizontal" enctype="multipart/form-data" action="/news/addNewsAction" method="post">
+                    <div class="box-body">
+                        
+                        <div class="form-group">
+                            <label for="newsID" class="col-sm-2 control-label">newsID</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control"  value="" name="newsID" placeholder="newsID">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="newsName" class="col-sm-2 control-label">newsName</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value="" id="newsName" name="newsName">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                                <label for="newsLinkSrc" class="col-sm-2 control-label">newsLinkSrc</label>
+    
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" value="" name="newsLinkSrc" placeholder="newsLinkSrc">
+                                </div>
+                            </div>
+                        
+                        <div class="form-group">
+                            <label for="newsContent" class="col-sm-2 control-label">newsContent</label>
+
+                            <div class="col-sm-10">
+                                <!-- <div class="box-body pad"> -->
+                                    <!-- <form> -->
+                                          <textarea id="editor1" style="resize:none" name="newsContent" rows="5" class="form-control" >
+                                                                 
+                                          </textarea>
+                                    <!-- </form> -->
+                                  <!-- </div> -->
+                                            
+                                </div>
+                                
+                            </div> 
+                           
+                                   
+                        
+                        <div class="form-group files">
+                            <label for="newsImages" class="col-sm-2 control-label">newsImages</label>
+
+                            <div class="col-sm-10">
+                                <input type="file" class="form-control"  value="" name="newsImages" placeholder="newsImages">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group footer">
+                                <label for="alt" class="col-sm-2 control-label sr-only">alt</label>
+                                <div class="col-sm-10">
+                                        
+                                    <button type="button" id="btn" class="btn btn-info pull-left">添加图片</button>
+                                    
+                                    <button type="submit" class="btn btn-info pull-right">sign in</button>
+                                </div>
+                            </div>
+                    </div>
+                    <!-- /.box-body -->
+
+                    <!-- <div class="box-footer">
+                           
+
+                       
+                       
+                    </div> -->
+                    <!-- /.box-footer -->
+                </form>
+            </div>
+
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Main Footer -->
+    <% include footer.ejs %>
+
+
+    <!-- Add the sidebar's background. This div must be placed
+         immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
+</div>
+<script src="/javascripts/jquery.min.js"></script>
+<script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/javascripts/app.min.js"></script>
+<script src='/lib/bootstrap/dist/js/bootstrap3-wysihtml5.all.min.js' /><script></script>
+<script>
+    
+    $(document).ready(function () {
+        $("#btn").click(function (e) { 
+            e.preventDefault();
+            console.log("11111111111111111111111111111");
+
+        $(".footer").before(`<div class="form-group files">
+                            <label for="newsImages" class="col-sm-2 control-label"></label>
+
+                            <div class="col-sm-10">
+                                <input type="file" class="form-control" value="" name="newsImages" placeholder="newsImages">
+                            </div>
+                        </div>`);
+        })
+    });
+     
+        
+       
+      </script>
+    
+     <script>
+    $(function () {
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace('editor1')
+    //bootstrap WYSIHTML5 - text editor
+    $('.textarea').wysihtml5()
+  })
+
+      </script>
+</body>
+</html>

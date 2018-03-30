@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <!--忽略了public的路径-->
+  <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css' />
+  <link rel='stylesheet' href='/stylesheets/font-awesome.min.css' />
+  <link rel='stylesheet' href='/stylesheets/ionicons.min.css' />
+  <link rel='stylesheet' href='/lib/admin-lte/dist/css/AdminLTE.min.css' />
+  <link rel='stylesheet' href='/lib/admin-lte/dist/css/skins/skin-blue.min.css' />
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <!-- Main Header -->
+    <% include header.ejs %>
+  <!-- Left side column. contains the logo and sidebar -->
+    <% include menu.ejs %>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Your Page Content Here -->
+
+
+      <div class="box box-info">
+        <div class="box-header with-border">
+          <h3 class="box-title">编辑轮播图</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal" enctype="multipart/form-data" action="/updateTemplateAction" method="post">
+          <div class="box-body">
+              <div class="form-group">
+                  <label for="addressID" class="col-sm-2 control-label">addressID</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control"  value="<%= result[0].addressID %>" name="addressID" placeholder="addressID">
+                  </div>
+                </div>
+            <div class="form-group">
+              <label for="addressType" class="col-sm-2 control-label">addressType</label>
+
+              <div class="col-sm-10">
+                <input type="text" class="form-control"  value="<%= result[0].addressType %>" name="addressType" placeholder="addressType">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="templateStyle" class="col-sm-2 control-label">templateStyle</label>
+
+              <div class="col-sm-10">
+                <input type="text" class="form-control"  value="<%= result[0].templateStyle %>" name="templateStyle" placeholder="templateStyle">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="templateID" class="col-sm-2 control-label">templateID</label>
+
+              <div class="col-sm-10">
+                <input type="text" class="form-control" readonly value="<%= result[0].templateID %>" name="templateID" placeholder="templateID">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="userID" class="col-sm-2 control-label">userID</label>
+
+              <div class="col-sm-10">
+                <input type="text" class="form-control" readonly value="<%= result[0].userID %>" name="userID" placeholder="userID">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="templateName" class="col-sm-2 control-label">templateName</label>
+
+              <div class="col-sm-10">
+                <input type="text" class="form-control"  value="<%= result[0].templateName %>" name="templateName" placeholder="templateName">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="templateImages" class="col-sm-2 control-label">templateImages</label>
+
+              <div class="col-sm-10">
+                <input type="file" class="form-control" value="<%= result[0].templateImages %>" id="templateImages" name="templateImages">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="templateLinkSrc" class="col-sm-2 control-label">templateLinkSrc</label>
+
+              <div class="col-sm-10">
+                <input type="text" class="form-control" value="<%= result[0].templateLinkSrc %>" name="templateLinkSrc" placeholder="templateLinkSrc">
+              </div>
+            </div>
+
+
+          </div>
+          <!-- /.box-body -->
+
+          <div class="box-footer">
+            <div class="form-group">
+              <label for="alt" class="col-sm-2 control-label sr-only">alt</label>
+              <div class="col-sm-10">
+                <button type="submit" class="btn btn-info pull-left">修改template</button>
+              </div>
+            </div>
+          </div>
+          <!-- /.box-footer -->
+        </form>
+      </div>
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+    <% include footer.ejs %>
+
+
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<script src="/javascripts/jquery.min.js"></script>
+<script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/javascripts/app.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <!--忽略了public的路径-->
+  <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css' />
+  <link rel='stylesheet' href='/stylesheets/font-awesome.min.css' />
+  <link rel='stylesheet' href='/stylesheets/ionicons.min.css' />
+  <link rel='stylesheet' href='/lib/admin-lte/dist/css/AdminLTE.min.css' />
+  <link rel='stylesheet' href='/lib/admin-lte/dist/css/skins/skin-blue.min.css' />
+  <link rel='stylesheet' href='/lib/ckeditor/ckeditor.js'/>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <!-- Main Header -->
+    <% include header.ejs %>
+  <!-- Left side column. contains the logo and sidebar -->
+    <% include menu.ejs %>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Your Page Content Here -->
+
+
+      <div class="box box-info">
+        <div class="box-header with-border">
+          <h3 class="box-title">编辑新闻</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal"  action="/news/updateNewsAction" method="post">
+          <div class="box-body">
+            <div class="form-group">
+              <label for="newsID" class="col-sm-2 control-label">newsID</label>
+
+              <div class="col-sm-10">
+                <input type="text" class="form-control" readonly value="<%= result[0].newsID %>" name="newsID" placeholder="newsID">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="newsName" class="col-sm-2 control-label">newsName</label>
+
+              <div class="col-sm-10">
+                <input type="text" class="form-control" readonly value="<%= result[0].newsName %>" name="newsName" placeholder="newsName">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="newsLinkSrc" class="col-sm-2 control-label">newsLinkSrc</label>
+
+              <div class="col-sm-10">
+                <input type="text" class="form-control"  value="<%= result[0].newsLinkSrc %>" name="newsLinkSrc" placeholder="newsLinkSrc">
+              </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="newsContent" class="col-sm-2 control-label">newsContent</label>
+  
+                <div class="col-sm-10">
+                  
+                        <textarea id="editor1" style="resize:none;text-aligin:left;padding:10px;" name="newsContent" rows="5" value="" class="form-control" >
+                            <%= result[0].newsContent %>
+                        </textarea>
+                </div>
+              </div>
+              
+          </div>
+          
+          <!-- /.box-body -->
+
+          <div class="box-footer">
+            <div class="form-group">
+              <label for="alt" class="col-sm-2 control-label sr-only">alt</label>
+              <div class="col-sm-10">
+                <button type="submit" class="btn btn-info pull-left">修改新闻</button>
+              </div>
+            </div>
+          </div>
+          <!-- /.box-footer -->
+        </form>
+      </div>
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+    <% include footer.ejs %>
+
+
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<script src="/javascripts/jquery.min.js"></script>
+<script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/javascripts/app.min.js"></script>
+<script>
+    $(function () {
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace('editor1')
+    //bootstrap WYSIHTML5 - text editor
+    $('.textarea').wysihtml5()
+  })
+
+      </script>
+</body>
+</html>

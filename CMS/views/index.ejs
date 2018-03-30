@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <!--忽略了public的路径-->
+  <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css' />
+  <link rel='stylesheet' href='/stylesheets/font-awesome.min.css' />
+  <link rel='stylesheet' href='/stylesheets/ionicons.min.css' />
+  <link rel='stylesheet' href='/lib/admin-lte/dist/css/AdminLTE.min.css' />
+  <link rel='stylesheet' href='/lib/admin-lte/dist/css/skins/skin-blue.min.css' />
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <!-- Main Header -->
+  <% include header.ejs %>
+  <!-- Left side column. contains the logo and sidebar -->
+  <% include menu.ejs %>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+
+    <!-- Main content -->
+    <section class="content">
+      <!--<h1>首页</h1>-->
+      <!-- Your Page Content Here -->
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+  <% include footer.ejs %>
+
+
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<script src="/javascripts/jquery.min.js"></script>
+<script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/javascripts/app.min.js"></script>
+
+</body>
+</html>
