@@ -9,7 +9,7 @@ var fs = require('fs');//引入文件模块
 /* GET home page. */
 router.get('/', function(req, res, next) {
 /*============================ 跳转登录页面=======================*/
-    var  login = 0;
+  
     if(req.cookies.login == 1){
         mysql.connect((db)=>{
           var queryObj = {};
