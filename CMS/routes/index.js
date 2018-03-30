@@ -3,6 +3,7 @@ var router = express.Router();
 var mysql = require('./tool/mysql');
 var url = require('url');
 var multer = require('multer');//引入中间件
+var uploadBanner = multer({dest:'pcuploads/banner'});
 var upload = multer({dest:'uploads/'});//上传文件到uploads
 var fs = require('fs');//引入文件模块
 
@@ -178,26 +179,26 @@ router.get('/addBanner', function(req, res, next) {
     res.render('addBanner',{title:'听风少年-导航',activeIndex:0})
 });
 /*======================添加banner数据=======================*/
-router.post('/addBannerAction',upload.single('bannerImages'), function(req, res, next) {
+router.post('/addBannerAction',uploadBanner.single('bannerImages'), function(req, res, next) {
     var obj = req.body;
     // console.log(obj);
     var bannerID = obj.bannerID;
-    var bannerType = obj.bannerType;
+   
     var bannerName = obj.bannerName;
     var bannerLinkSrc = obj.bannerLinkSrc;
     var filename = req.file.filename;
     var type = req.file.mimetype.split('/')[1];//图片类型
-    var bannerImages = "http://localhost:3000/" + filename+"."+type;//图片路径
+    var bannerImages = "http://localhost:4000/banner/" + filename+"."+type;//图片路径
     mysql.connect((db)=>{
 
         var insertData = {
             bannerID:bannerID,
-            bannerType:bannerType,
+       
             bannerName:bannerName,
             bannerImages:bannerImages,
             bannerLinkSrc:bannerLinkSrc
         }
-        fs.rename('uploads/'+filename,'uploads/'+filename+'.'+type,(err,result)=>{
+        fs.rename('pcuploads/banner/'+filename,'pcuploads/banner/'+filename+'.'+type,(err,result)=>{
             if(err) throw  err;
             mysql.insert(db,'banner',insertData,(result)=>{
                 // res.redirect('/banner?limitNum=4&pageCode=0');
@@ -231,28 +232,48 @@ router.get('/updateBanner', function(req, res, next) {
     })
 });
 /*=========================更新banner页面==========================*/
-router.post('/updateBannerAction',upload.single('bannerImages'), function(req, res, next) {
+router.post('/updateBannerAction',uploadBanner.single('bannerImages'), function(req, res, next) {
     var obj = req.body;
     // console.log(obj);
     var bannerID = obj.bannerID;
-    var bannerType = obj.bannerType;
+
     var bannerName = obj.bannerName;
     var bannerLinkSrc = obj.bannerLinkSrc;
     var filename = req.file.filename;
     var type = req.file.mimetype.split('/')[1];//图片类型
-    var bannerImages = "http://localhost:3000/" + filename+"."+type;//图片路径
+    var bannerImages = "http://localhost:4000/banner/" + filename+"."+type;//图片路径
     mysql.connect((db)=>{
         var whereObj = {
             bannerID:bannerID,
-            bannerType:bannerType
+          
         };
         var updateData = {
             bannerID:bannerID,
-            bannerType:bannerType,
+         
             bannerName:bannerName,
             bannerLinkSrc:bannerLinkSrc,
             bannerImages:bannerImages
         };
+        mysql.find(db, "banner", whereObj, {}, (resultAll) => {
+            var str = resultAll[0].bannerImages.split("/")[4]
+            mysql.updateOne(db, "banner", whereObj, updateData, (result) => {
+      
+              fs.rename("pcuploads/banner/" + req.file.filename, "pcuploads/banner/" + req.file.filename + "." + type, (err) => {
+                if (err) throw err
+                db.close()
+                res.send('<script>alert("修改成功");window.location.href="/banner?limitNum=4&pageCode=0"</script>')
+              })
+              fs.unlink("pcuploads/banner/" + str, (err) => {
+                if (err) throw err
+                    console.log(str,"---+++")
+              })
+            
+      
+      
+            })
+          })
+        
+        /* xqq原版
         fs.rename('uploads/'+filename,'uploads/'+filename+'.'+type,(err,result)=>{
             if(err) throw  err;
             mysql.updateOne(db,'banner',whereObj,updateData,(result)=>{
@@ -260,7 +281,7 @@ router.post('/updateBannerAction',upload.single('bannerImages'), function(req, r
                 res.send('<script>alert("修改成功");window.location.href="/banner?limitNum=4&pageCode=0"</script>')
                 db.close();
             })
-        })
+        }) */
     })
 });
 /*==============================删除banner======================*/
@@ -271,10 +292,26 @@ router.get('/deleteBanner', function(req, res, next) {
         var deleteObj = {
             bannerID:bannerID
         }
+
+        mysql.find(db, "banner", deleteObj, {}, (resultAll) => {
+            mysql.deleteOne(db, "banner", deleteObj, (result) => {
+              db.close()
+              res.redirect('/banner?limitNum=4&pageCode=0');
+              var str = resultAll[0].bannerImages.split("/")[4]
+        
+              fs.unlink("pcuploads/banner/" + str, (err) => {
+                  console.log(str)
+                if (err) throw err
+      
+              })
+            })
+      
+          })
+       /*谢庆庆版 
         mysql.deleteOne(db,'banner',deleteObj,(result)=>{
             res.redirect('/banner?limitNum=4&pageCode=0');
             db.close();
-        })
+        }) */
     })
 });
 
