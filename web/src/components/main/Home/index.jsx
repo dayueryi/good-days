@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './../Header/index.jsx';
 import Bannerlist from './banner/index.jsx';
 import Footerlist from './../Footer/index.jsx';
+import HotActive from './hotActive/index.jsx';
 import { BrowserRouter as Router, Route, Switch  } from "react-router-dom";
 import './index.scss';
 
@@ -16,6 +17,8 @@ class Home extends Component {
           <div className = "box">
              
             <div className="x-content">
+            <Bannerlist/>
+            <HotActive/>
             内容内容内容内容内容内容内容
                 <p>内容</p>
                 <p>内容</p>

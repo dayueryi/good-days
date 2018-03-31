@@ -14,21 +14,35 @@ body,html,.App,#root{
   @include flex-direction(column);
   header{
     @include rect(100%,64px);
-    @include background-color(#444);
-      ul{
+    @include background-color(#181818);
+      .x-ul{
         @include rect(auto,100%);
       
         li{
           float: left;
+          @include rect(80px,100%);
           a{
             display:block;
-            float: left;
-            width:80px;
-            height: 100%;
+            // float: left;
+            // width:80px;
+            // height: 100%;
             line-height: 64px;
-            text-align: center;
+            // text-align: center;
             color:#fff;
             text-decoration: none;
+            @include rect(80px,100%);                    
+            @include flexbox();
+            @include flex-direction(column);
+            @include justify-content();
+            @include align-items();  
+            p{
+              @include font-size(14px);   
+            }
+            span{
+              display: block;
+              @include font-size(12px);   
+              color:#fff;
+            }
             &.active{
               background: #f66;
              
@@ -51,21 +65,13 @@ body,html,.App,#root{
         @include rect(100%,auto);
         @include overflow();
       }
-      // footer{
-      //   @include rect(100%,64px);
-      //   @include line-height(64px);
-      //   @include background-color(#f66);
-      //   @include text-align();
-      //   @include font-size(18px);
-      // }
+      .footer{
+        @include rect(100%,64px);
+        @include line-height(64px);
+        @include background-color(#f66);
+        @include text-align();
+        @include font-size(18px);
+      }
     }
   }
-}
-#components-layout-demo-fixed ul {
-  width: 120px;
-  height: 31px;
-  background: rgba(255,255,255,.2);
-  background:yellow;
-  margin: 16px 24px 16px 0;
-  float: right;
 }

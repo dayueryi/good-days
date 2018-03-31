@@ -15,10 +15,13 @@ class Home extends Component {
     render() { 
         
      return  (
-         
-              <div className = "">
-                    粉丝论坛
-              </div>
+        <div className = "box">
+        <div className="x-content">
+        粉丝论坛
+        </div>
+        {/* <Footerlist/> */}
+      </div>
+              
           
          )
          

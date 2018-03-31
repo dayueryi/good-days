@@ -23,38 +23,46 @@ class Home extends Component {
             <ul className="x-ul">
             <li >
                   <NavLink to="/home" activeClassName="active">
-                    首页
+                    <p>首页</p>
+                    <span>Home</span>
                   </NavLink>
                 </li>
                 <li>
                 <NavLink to="/show" activeClassName="active">
-                最美客照
+                
+                  <p>最美客照</p>
+                  <span>Show</span>
                   </NavLink>
                 </li>
                 <li>
                 <NavLink to="/subject" activeClassName="active">
-                主题类型
+                
+                  <p>主题类型</p>
+                  <span>Subject</span>
                   </NavLink>
                 </li>
                 <li>
                 <NavLink to="/active" activeClassName="active">
-                最新活动
+                  <p>最新活动</p>
+                  <span>Active</span>
                   </NavLink>
                 </li>  
                 <li>
                 <NavLink to="/news" activeClassName="active">
-                新闻中心
+                <p> 新闻中心</p>
+               <span>News</span>
                   </NavLink>
                 </li> 
                 <li>
                 <NavLink to="/forum" activeClassName="active">
-                粉丝论坛
+                <p>粉丝论坛</p>
+                <span>Forum</span>
                   </NavLink>
                 </li>
                 <li>
                 <NavLink to="/appointment" activeClassName="active">
-                  
-                在线预约
+                  <p>在线预约</p>
+                  <span>Appointment</span>
                 </NavLink>
                 </li> 
             </ul>

@@ -3,7 +3,12 @@ import './login.scss';
 class Login extends Component {
     state = {}
     render() { 
-        return 
+        return (
+            <div className = "box">
+            <div className="x-content">
+            </div>
+            </div>
+        )
     }
 }
  
