@@ -1,24 +1,41 @@
 import React, { Component } from 'react';
-import { Route,Switch,Redirect } from 'react-router-dom';
+import { Route,Switch,Redirect,NavLink } from 'react-router-dom';
 
 import Active from './components/main/Active/index.jsx';
 import Show from './components/main/Show/index.jsx';
 import Subject from './components/main/Subject/index.jsx';
 import Home from "./components/main/Home/index.jsx";
+import Headerlist from "./components/main/Header/index.jsx";
+import Newslist from "./components/main/News/index.jsx";
+import Forumlist from "./components/main/Forum/index.jsx";
+import Appointmentlist from "./components/main/Appointment/index.jsx";
 import './App.css';
+
+import { Layout } from 'antd';
+const { Header, Footer, Sider, Content ,Menu,Breadcrumb} = Layout;
 
 // import './index.scss';
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Switch>
-          <Route path="/home" component={Home}/>
-          <Route path="/active" component={Active}/>
-          <Route path="/show" component={Show}/>
-          <Route path="/subject" component={Subject}/>
-          <Redirect to={{pathname:'/home'}}/>
-        </Switch>
+      <header>
+          <Headerlist/>
+      </header>
+      <div className="container">
+           <Switch>
+              <Route path="/home" component={Home}/>
+              <Route path="/active" component={Active}/>
+              <Route path="/show" component={Show}/>
+              <Route path="/subject" component={Subject}/>
+              <Route path="/news" component={Newslist}/>
+              <Route path="/forum" component={Forumlist}/>
+              <Route path="/appointment" component={Appointmentlist}/>
+              <Redirect to={{pathname:'/home'}}/>
+          </Switch>
+      </div>
+       
+       
       </div>
     );
   }

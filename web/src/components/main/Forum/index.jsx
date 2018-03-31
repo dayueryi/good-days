@@ -16,8 +16,8 @@ class Home extends Component {
         
      return  (
          
-              <div className = "">最新活动
-              
+              <div className = "">
+                    粉丝论坛
               </div>
           
          )

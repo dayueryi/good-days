@@ -1,0 +1,44 @@
+
+.logo{
+  width:250px;
+  height: 40px;
+  // background:url('~@/img/logo.png') #444 no-repeat center ;
+  // background: #f66;
+  float: left;
+  margin-top: 12px;
+  margin-left:50px;
+  img{
+    width:100%;
+    height: 100%;
+  }
+}
+.search{
+  width:300px;
+  height: 64px;
+  float:left;
+  margin-left:120px;
+  // background: yellowgreen;
+  // line-height: 64px;
+  margin:16px 60px 16px 50px;
+  input{
+    width:80%;
+    height:30px;
+    border:0;
+    outline: none;
+    border-radius: 5px 0 0 5px;
+    float: left;
+  }
+  span{
+    display: block;
+    width:20%;
+    height: 30px;
+    float: left;
+    text-align: center;
+    line-height: 30px;
+    background:#f66;
+  }
+
+}
+.x-ul{
+  margin-left:40px;
+}
