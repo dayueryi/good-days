@@ -11,6 +11,9 @@ var order = require('./routes/order');
 var product = require('./routes/product');
 var news = require('./routes/news');
 var address = require('./routes/address');
+
+var subject = require('./views/subject/subject.js');
+var detail = require('./views/detail/detail.js');
 // var detail = require('./routes/detail');
 
 var indexapi = require('./api/index');
@@ -48,7 +51,8 @@ app.use('/order', order);
 app.use('/product', product);
 app.use('/news', news);
 app.use('/address', address);
-
+app.use('/subject', subject);
+app.use('/detail', detail);
 //供前端调用的接口
 app.use('/api', indexapi);
 app.use('/api/users', usersapi);

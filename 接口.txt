@@ -1,0 +1,6 @@
+1  banner  http://localhost:4000/api/banner/
+
+2 subject 主题 http://localhost:4000/subject/api  
+	参数1  subjectID 根据ID查询
+	参数2  subjectKind 根据类型查询(内/外) 值为0/1
+	如不写参数,可获取所有数据
