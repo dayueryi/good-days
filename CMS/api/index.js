@@ -49,28 +49,14 @@ router.get('/nav', function(req, res, next) {
 //查询---跳转banner导航
 router.get('/banner', function(req, res, next) {
     //一进入列表页面就分页
-    var pageCode = url.parse(req.url, true).query.pageCode * 1;
-    var limitNum = url.parse(req.url, true).query.limitNum * 1;
+
     mysql.connect(function(db){
         var queryObj = {};
         var showObj = {};
-        var skipNum = pageCode * limitNum;
+       
         mysql.find(db, 'banner', queryObj, showObj, function(resultAll) {
-            mysql.findFenye(db, 'banner', queryObj, showObj, limitNum, skipNum, pageCode, function(result) {
-                var totalPage = Math.ceil(resultAll.length / limitNum);//总页数
-                var obj = {
-                    title: "听风少年-轮播列表",
-                    activeIndex: 0,
-                    tip: '',
-                    result: result,
-                    pageCode: pageCode,
-                    totalPage: totalPage
-                }
-                // console.log(obj.result);
-                // res.render('banner', obj);
-                res.send(result);
-                db.close();
-            })
+            res.send(resultAll)
+            db.close()
         })
     })
 });
