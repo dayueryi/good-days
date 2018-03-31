@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import './index.scss';
 import store from "@/store/index.js"
-import './home.scss';
+
 class Home extends Component {
     state = {}
     clickDate(){
