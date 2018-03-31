@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <!--忽略了public的路径-->
+  <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css' />
+  <link rel='stylesheet' href='/stylesheets/font-awesome.min.css' />
+  <link rel='stylesheet' href='/stylesheets/ionicons.min.css' />
+  <link rel='stylesheet' href='/lib/admin-lte/dist/css/AdminLTE.min.css' />
+  <link rel='stylesheet' href='/lib/admin-lte/dist/css/skins/skin-blue.min.css' />
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <!-- Main Header -->
+  <% include ./../header.ejs %>
+  <!-- Left side column. contains the logo and sidebar -->
+  <% include ./../menu.ejs %>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+
+    <!-- Main content -->
+    <section class="content">
+      <!-- Your Page Content Here -->
+      <div class="box">
+        <div class="box-header with-border">
+          <h3 class="box-title">主题活动</h3>
+            <button class="btn btn-sm btn-success " onclick="toAddSubject()">
+              <span class="glyphicon glyphicon-plus"></span>
+              添加
+            </button>
+          </h3>
+
+          <button class="btn btn-sm btn-default pull-right">导入数据</button>
+          <button class="btn btn-sm btn-info pull-right">导出数据</button>
+        </div>
+
+        <!-- /.box-header -->
+        <div class="box-body">
+          <table class="table table-bordered">
+              <!-- 类型id、主题名称、套系类型(风格)、婚纱id、拍摄场地、礼服、价格、
+              图片 -->
+            <tr>
+             
+              <th>主题ID</th>
+              <th>主题名称</th>
+              <th>类型</th>
+              <th>套系类型(风格)</th>
+              <th>拍摄场地</th>
+              <th>礼服</th>
+              <th>价格</th>
+              <th>图片</th>
+              <th>操作</th>
+            </tr>
+
+            <% for(var i=0;i<result.length;i++){ %>
+              <tr>
+                <td><%= result[i].subjectID %></td>
+                <td><%= result[i].subjectName %></td>
+                <td><%= result[i].subjectKind %></td>
+                <td><%= result[i].subjectStyle %></td>
+                <td><%= result[i].subjectAddress %></td>
+                <td><%= result[i].subjectFormal %></td>
+                <td><%= result[i].subjectPrice %></td>
+                <td><img src="<%= result[i].subjectImg %>" alt=""></td>
+                <td>
+                  <button class="btn btn-xs btn-warning" onclick="toUpdateSubject('<%= result[i].subjectID %>')">
+                    <span class="glyphicon glyphicon-edit"></span>
+                    编辑
+                  </button>
+                  <button class="btn btn-xs btn-danger" onclick="toDeleteSubject('<%= result[i].subjectID %>')">
+                    <span class="glyphicon glyphicon-trash"></span>
+                    删除
+                  </button>
+                </td>
+              </tr>
+       <%}%>
+
+          </table>
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer clearfix">
+         
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+  <% include ./../footer.ejs %>
+
+
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<script src="/javascripts/jquery.min.js"></script>
+<script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/javascripts/app.min.js"></script>
+<script>
+  function toAddSubject() {
+      window.location.href = '/subject/addSubject';
+  }
+  function toUpdateSubject(subjectID){
+      window.location.href = '/subject/updateSubject?subjectID='+subjectID;
+  }
+  function toDeleteSubject(subjectID) {
+      window.location.href = '/subject/deleteSubject?subjectID='+subjectID;
+  }
+</script>
+</body>
+</html>

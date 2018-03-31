@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <!--忽略了public的路径-->
+    <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='/stylesheets/font-awesome.min.css' />
+    <link rel='stylesheet' href='/stylesheets/ionicons.min.css' />
+    <link rel='stylesheet' href='/lib/admin-lte/dist/css/AdminLTE.min.css' />
+    <link rel='stylesheet' href='/lib/admin-lte/dist/css/skins/skin-blue.min.css' />
+    <link rel='stylesheet' href='/lib/ckeditor/ckeditor.js' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+        <% include ./../header.ejs %>
+
+            <% include ./../menu.ejs %>
+
+
+                <div class="content-wrapper">
+
+                    <section class="content">
+
+
+                        <div class="box box-info">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">添加主题类型</h3>
+                            </div>
+
+                            <!-- form start -->
+                            <form class="form-horizontal" enctype="multipart/form-data" action="/subject/updateSubjectAction" method="post">
+                                <div class="box-body">
+
+                                    <div class="form-group">
+                                        <label for="subjectID" class="col-sm-2 control-label">主题ID</label>
+
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" readonly value="<%= result[0].subjectID %>" name="subjectID" placeholder="subjectID">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="subjectName" class="col-sm-2 control-label">主题名称</label>
+
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="<%= result[0].subjectName %>" placeholder="subjectName" name="subjectName">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="subjectKind" class="col-sm-2 control-label">类型</label>
+
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="<%= result[0].subjectKind %>" name="subjectKind" placeholder="subjectKind">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="subjectStyle" class="col-sm-2 control-label">风格</label>
+
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="<%= result[0].subjectStyle %>" name="subjectStyle" placeholder="subjectStyle">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="subjectAddress" class="col-sm-2 control-label">地点</label>
+
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="<%= result[0].subjectAddress %>" name="subjectAddress" placeholder="subjectAddress">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="subjectFormal" class="col-sm-2 control-label">礼服</label>
+
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="<%= result[0].subjectFormal %>" name="subjectFormal" placeholder="subjectFormal">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="subjectPrice" class="col-sm-2 control-label">价格</label>
+
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="<%= result[0].subjectPrice %>" name="subjectPrice" placeholder="subjectPrice">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group files">
+                                        <label for="subjectImg" class="col-sm-2 control-label">图片</label>
+
+                                        <div class="col-sm-10">
+                                            <input type="file" class="form-control" required value="" name="subjectImg" placeholder="subjectImg">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group footer">
+                                        <label for="alt" class="col-sm-2 control-label sr-only">alt</label>
+                                        <div class="col-sm-10">
+
+                                            <!-- <button type="button" id="btn" class="btn btn-info pull-left">添加图片</button> -->
+
+                                            <button type="submit" class="btn btn-info pull-left">sign in</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.box-body -->
+
+                                <!-- <div class="box-footer">
+                           
+
+                       
+                       
+                    </div> -->
+                                <!-- /.box-footer -->
+                            </form>
+                        </div>
+
+                    </section>
+                    <!-- /.content -->
+                </div>
+                <!-- /.content-wrapper -->
+
+                <!-- Main Footer -->
+                <% include ./../footer.ejs %>
+
+
+                    <!-- Add the sidebar's background. This div must be placed
+         immediately after the control sidebar -->
+                    <div class="control-sidebar-bg"></div>
+    </div>
+    <script src="/javascripts/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/javascripts/app.min.js"></script>
+    <script src='/lib/bootstrap/dist/js/bootstrap3-wysihtml5.all.min.js' />
+    <script></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn").click(function (e) {
+                e.preventDefault();
+                console.log("11111111111111111111111111111");
+
+                $(".footer").before(
+                    `<div class="form-group files">
+                            <label for="newsImages" class="col-sm-2 control-label"></label>
+
+                            <div class="col-sm-10">
+                                <input type="file" class="form-control" value="" name="newsImages" placeholder="newsImages">
+                            </div>
+                        </div>`
+                );
+            })
+        });
+    </script>
+
+    <script>
+        $(function () {
+            // Replace the <textarea id="editor1"> with a CKEditor
+            // instance, using default configuration.
+            CKEDITOR.replace('editor1')
+            //bootstrap WYSIHTML5 - text editor
+            $('.textarea').wysihtml5()
+        })
+    </script>
+</body>
+
+</html>
