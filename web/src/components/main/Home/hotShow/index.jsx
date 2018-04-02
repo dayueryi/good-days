@@ -15,7 +15,7 @@ class Home extends Component {
               
                  <div className="Fs-box">
                       <div className="title">
-                            <h2>热门活动</h2>
+                            <h2>最新旅拍客照</h2>
                             <h3>travel loveshow</h3>
                             <div className="line"></div>
                       </div>
@@ -31,6 +31,7 @@ class Home extends Component {
                                     <div className="bd" id="hei">
                                        <div className="tempWrap">
                                             <ul className="clearfix">
+                                            
                                                 <li>
                                                     <a href="" className="active">
                                                         <div className="img">        

@@ -11,11 +11,9 @@ class Home extends Component {
        
      return  (
           <div className = "home">
-             
-              
                  <div className="Fs-box">
                       <div className="title">
-                            <h2>热门活动</h2>
+                            <h2>热门主题</h2>
                             <h3>travel loveshow</h3>
                             <div className="line"></div>
                       </div>
@@ -23,7 +21,6 @@ class Home extends Component {
                       <a>不看明星 不看模特 只看客照</a>
                       <a>拒绝千挑万选 每日客照接单</a>
                       </div>
-                     
                       <div className="bx-cont bx-cont-2">
                             <div className="bx-cont bx-cont-4">
                                 <div className="scrlpraise_guest">
