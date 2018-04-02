@@ -1,3 +1,100 @@
-.home{
-    background: #fff;
+@import "~@/lib/reset.scss";
+
+.w_news {
+  @include background-color(#fff);
+  h1 {
+    @include rect(100%, auto);
+    @include text-align();
+    margin-top: 50px;
+    
+  }
+  .w_main {
+    @include rect(1180px, auto);
+    margin: 0 auto;
+
+    dl {
+      @include rect(1180px, 250px);
+      margin-top: 50px;
+      overflow: hidden;
+      dt {
+        float: left;
+        a{
+          img{
+            @include rect(580px, 250px);
+          }
+        }
+      }
+      dd {
+          background:#f5f5f5;
+        float: left;
+        @include rect(570px, auto);
+        padding-left: 30px;
+        h3 {
+          height: 50px;
+          padding-top: 28px;
+          line-height: 22px;
+          font-size: 18px;
+          color: #b0b0b0;
+        }
+        h5 {
+          font-size: 12px;
+          line-height: 16px;
+          margin-top: 4px;
+          color: #b0b0b0;
+        }
+        h4 {
+          padding-right: 10px;
+          margin-top: 23px;
+          height: 34px;
+          line-height: 34px;
+          color: #8a8a8a;
+          overflow: hidden;
+          font-size: 30px;
+        }
+        p {
+          line-height: 22px;
+          height: 66px;
+          padding-right: 10px;
+          overflow: hidden;
+          color: #8a7253;
+          font-size: 14px;
+          margin: 11px 0 0 0;
+        }
+        div {
+          height: 30px;
+          line-height: 30px;
+          font-size: 12px;
+          margin-top: 8px;
+          a{
+              span{
+                  display: inline-block;
+                  @include rect(100px, 30px);
+                  line-height: 30px;
+                  font-size: 12px;
+                  color: #fff;
+                  text-align: center;
+                    
+              }
+                span:nth-of-type(1){
+                background: #b0b0b0;
+               
+              }
+              span:nth-of-type(2){
+                background: #c21e1f;
+              }
+          }
+          &:hover{
+            span:nth-of-type(1){
+                background: #c21e1f;
+               
+              }
+              span:nth-of-type(2){
+                background: #b0b0b0;
+               
+              }
+          }
+        }
+      }
+    }
+  }
 }
