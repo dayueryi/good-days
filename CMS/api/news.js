@@ -11,30 +11,17 @@ var async = require('async');//引入async模块
 
 router.get('/', function(req, res, next) {
    
-    var pageCode = url.parse(req.url, true).query.pageCode * 1;
-    var limitNum = url.parse(req.url, true).query.limitNum * 1;
+    // var pageCode = url.parse(req.url, true).query.pageCode * 1;
+    // var limitNum = url.parse(req.url, true).query.limitNum * 1;
     mysql.connect(function(db){
         var queryObj = {};
         var showObj = {
             
         };
-        var skipNum = pageCode * limitNum;
+
         mysql.find(db, 'news', queryObj, showObj, function(resultAll) {
-            mysql.findFenye(db, 'news', queryObj, showObj, limitNum, skipNum, pageCode, function(result) {
-                var totalPage = Math.ceil(resultAll.length / limitNum);//总页数
-                var obj = {
-                    title: "听风少年-news",
-                    activeIndex:5,
-                    tip: '',
-                    result: result,
-                    pageCode: pageCode,
-                    totalPage: totalPage
-                } 
-                // console.log(obj.totalPage);
-                // res.render('news', obj);
-                res.send(result);
+            res.send(resultAll);
                 db.close();
-            })
         })
     })
 });

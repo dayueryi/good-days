@@ -1,3 +1,19 @@
-.home{
-    background: #fff;
+@import "~@/lib/reset.scss";
+
+.w_news{
+    @include background-color(#fff);
+    .news_banner{
+        @include rect(100%,auto);
+        img{
+            @include rect(100%,auto);
+        }
+    }
+    h2{
+        text-align: center;
+        padding-top:66px;
+        padding-bottom:56px; 
+        img{
+            margin: 0 auto;
+        }
+    }
 }
