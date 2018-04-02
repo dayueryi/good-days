@@ -1,0 +1,95 @@
+@import './../../../../lib/reset.scss';
+body{
+  background: #eee;
+}
+.home{
+  background: #eee;
+}
+.jd_nr{
+
+  width: 1096px;
+  height:440px;
+  margin:20px auto 0;
+  overflow: hidden;
+  // padding:0 30px;
+}
+element.style {
+  width: 84px;
+  overflow: hidden;
+}
+.jd_nr a {
+  display: inline;
+  float: left;
+  width: 84px;
+  height: 440px;
+  text-indent: 761px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.jd_nr .a5 {
+  background: url("~@/img/5.jpg");
+}
+.jd_nr .a4 {
+  background: url("~@/img/4.jpg");
+}
+.jd_nr .a3 {
+  background: url("~@/img/3.jpg");
+}
+.jd_nr .a2 {
+  background: url("~@/img/2.jpg");
+}
+.jd_nr .a1 {
+  background: url("~@/img/1.jpg");
+}
+.clear{
+  height:0;
+  clear:both;
+}
+.Fs-box {
+  background: #eee;
+  min-width: 1200px;
+  padding: 40px 0 20px;
+  
+  .title {
+    text-align: center;
+    font-weight: 100;
+    h2 {
+      font-weight: 100;
+      font-size: 28px;
+      color: #e7e7e7;
+      color:#000;
+  }
+  h3 {
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #636363;
+    font-weight: normal;
+}
+.line {
+  height: 1px;
+  width: 36px;
+  background: #c6a04e;
+  margin: 10px auto;
+}
+}
+.target-bar {
+  text-align: center;
+  padding: 18px 0 0px;
+  color: #e7e7e7;
+  margin-bottom: 40px;
+  a {
+    color: #a5a5a5;
+    font-size: 16px;
+    margin: 0 10px;
+    font-weight: 100;
+  }
+  
+}
+}

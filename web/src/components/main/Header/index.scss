@@ -42,3 +42,28 @@
 .x-ul{
   margin-left:40px;
 }
+
+.x-ul li:nth-of-type(3){
+    position: relative;
+    &:hover{
+     .small_ul{
+
+        // display: block;
+      }
+    }
+}
+.small_ul{
+  width:100%;
+  position: absolute;
+  top:64px;
+  left:0;
+  background: #f66;
+  display: none;
+  // transition: all 1s ease-in;
+  li{
+    float: none;
+    height: 60px;
+  }
+}
+
+

@@ -1,19 +1,16 @@
-import React, { Component } from 'react';
-import { Carousel } from 'antd';
-import './index.scss';
-import banner01 from '@/img/banner01.jpg';
-import banner02 from '@/img/banner02.jpg';
-import banner03 from '@/img/banner03.jpg';
-import banner04 from '@/img/banner04.jpg';
+import React, { Component } from "react";
+import { Carousel } from "antd";
+import "./index.scss";
+import banner01 from "@/img/banner01.jpg";
+import banner02 from "@/img/banner02.jpg";
+import banner03 from "@/img/banner03.jpg";
+import banner04 from "@/img/banner04.jpg";
 class Home extends Component {
-    state = {}
-    render() { 
-       
-     return  (
-          <div className = "home">
-             
-              
-                 <div className="Fs-box">
+  state = {};
+  render() {
+    return (
+      <div className="home">
+        <div className="Fs-box">
                       <div className="title">
                             <h2>最新旅拍客照</h2>
                             <h3>travel loveshow</h3>
@@ -24,62 +21,94 @@ class Home extends Component {
                       <a>拒绝千挑万选 每日客照接单</a>
                       </div>
                      
-                      <div className="bx-cont bx-cont-2">
-                            <div className="bx-cont bx-cont-4">
-                                <div className="scrlpraise_guest">
-                                    <a href="javascript:;" className="prev"></a>
-                                    <div className="bd" id="hei">
-                                       <div className="tempWrap">
-                                            <ul className="clearfix">
-                                            
-                                                <li>
-                                                    <a href="" className="active">
-                                                        <div className="img">        
-                                                                <img src="http://img.vc520.com/uploads/201803/3-1P32G64Z70-L.jpg" alt="三月第四周客照"/>
-                                                        </div>
-                                                        <div className="info">
-                                                            <p>POST TIME:2018-03-27</p>
-                                                            <span>三月第四周客照</span>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="" className="active">
-                                                        <div className="img">        
-                                                                <img src="http://img.vc520.com/uploads/201803/3-1P32G64Z70-L.jpg" alt="三月第四周客照"/>
-                                                        </div>
-                                                        <div className="info">
-                                                            <p>POST TIME:2018-03-27</p>
-                                                            <span>三月第四周客照</span>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="" className="active">
-                                                        <div className="img">        
-                                                                <img src="http://img.vc520.com/uploads/201803/3-1P32G64Z70-L.jpg" alt="三月第四周客照"/>
-                                                        </div>
-                                                        <div className="info">
-                                                            <p>POST TIME:2018-03-27</p>
-                                                            <span>三月第四周客照</span>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                       </div> 
-                                    </div>
-                                    <a href="javascript:;" className="next"></a>
-                                </div>
-                            </div>
-                            <div className="morebar"></div>
-                      </div>
-                </div>      
+                      <div className="center">
+          <div className="module-c-r major-list-outer">
+            <ul className="major-list">
+              <li className="major-item">
+                <div className="box" />
+                <a href="/annals/24338.html" target="_blank">
+                  <span className="txt-hide front-face">
+                    <img
+                      className="img"
+                      src="http://www.lyy99.com/uploads/2018/03/290935026043.jpg_293x450.jpg"
+                      title="女装封面"
+                    />{" "}
+                  </span>
+                  <span className="back-face to-right" />
+                  <div className="wenzi">
+                    <p>2018.03.21</p>
+                    <p>YUANYE PHOTO WEDDING STUDIOS</p>
+                    <p>景点：厦门 鼓浪屿</p>
+                  </div>
+                </a>
+              </li>
+              <li className="major-item">
+                <div className="box" />
+                <a href="/annals/10293.html" target="_blank">
+                  <span className="txt-hide front-face">
+                    <img
+                      src="http://www.lyy99.com/uploads/2018/03/290939578171.jpg_293x450.jpg"
+                      title="大事件"
+                    />
+                  </span>
+                  <span className="back-face to-right" />
+                  <div className="wenzi">
+                    <p>2018.03.21</p>
+                    <p>YUANYE PHOTO WEDDING STUDIOS</p>
+                    <p>景点：厦门 鼓浪屿</p>
+                  </div>
+                </a>
+              </li>
+             
+              <li className="major-item">
+                <div className="box" />
+                <a href="/annals/24337.html" target="_blank">
+                  <span className="txt-hide front-face">
+                    <img
+                      src="http://www.lyy99.com/uploads/2018/03/170946222361.jpg_293x450.jpg"
+                      title="男装封面"
+                    />
+                  </span>
+                  <span className="back-face to-right" />
+                  <div className="wenzi">
+                    <p>2018.03.21</p>
+                    <p>YUANYE PHOTO WEDDING STUDIOS</p>
+                    <p>景点：厦门 鼓浪屿</p>
+                  </div>
+                </a>
+              </li>
+              <li className="major-item">
+                <div className="box" />
+                <a href="/annals/24338.html" target="_blank">
+                  <span className="txt-hide front-face">
+                    <img
+                      className="img"
+                      src="http://www.lyy99.com/uploads/2018/03/290935026043.jpg_293x450.jpg"
+                      title="女装封面"
+                    />{" "}
+                  </span>
+                  <span className="back-face to-right" />
+                  <div className="wenzi">
+                    <p>2018.03.21</p>
+                    <p>YUANYE PHOTO WEDDING STUDIOS</p>
+                    <p>景点：厦门 鼓浪屿</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+        
           </div>
-         )
-    }
-    componentDidMount(){
-        var Swiper = window.Swiper;
-    }
+        </div>
+                            
+             <div className="morebar"></div>
+         </div>
+      </div> 
+       
+    );
+  }
+  componentDidMount() {
+    // var Swiper = window.Swiper;
+  }
 }
- 
+
 export default Home;
