@@ -4,7 +4,7 @@ import { Route,Switch,Redirect,NavLink ,Link} from 'react-router-dom';
 import React, { Component } from 'react';
 import './index.scss';
 import logo from '@/img/logo.png';
-import Jquery from 'jquery';
+import $ from 'jquery';
 const { Header, Content, Footer } = Layout;
 class Home extends Component {
     state = {}
@@ -90,8 +90,15 @@ class Home extends Component {
          )
     }
     componentDidMount(){
-        Jquery(".ul_li").hover(function(){
+       /*  Jquery(".ul_li").hover(function(){
             Jquery(".small_ul").slideToggle("slow");
+        }) */
+        
+        $(".ul_li").click(function(){
+          $(".small_ul").slideToggle("slow");
+        })
+        $(".ul_li").mouseleave(function(){
+          $(".small_ul").slideUp("slow");
         })
     }
 }

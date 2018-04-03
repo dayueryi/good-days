@@ -11,10 +11,47 @@ import myajax from "@/tool/myajax"
 import "./index.scss";
 class News extends Component {
   state = {
-      paging:0
+      paging:0,
+      pageNum:"",
+      newsList : []
   };
+
+  componentDidUpdate(){
+    
+  }
+  componentWillMount(){
+    console.log(this.props.match.params.pageID)
+    this.setState({
+      pageNum:this.props.match.params.pageID
+    })
+ 
+
+  }
+  getNewsLiseDate=(pageNum)=>{
+    myajax.fetch({
+      url:"http://localhost:4000/api/news?pageNum="+pageNum,
+      option:{},
+      success:(data)=>{
+          
+       store.dispatch({
+         type:"listData",
+         data:data
+       }
+      )
+      console.log(store.getState().news,"redux")
+      }
+     })
+  }
+  componentWillReceiveProps(nextProps){
+    //console.log(nextProps.match.params.pageID)
+    if (nextProps.location.pathname != this.props.location.pathname) {
+      var pageNum = nextProps.match.params.pageID
+      this.getNewsLiseDate(pageNum)
+     } 
+     
+  }
   componentDidMount(){
-  //  console.log(myajax)
+    
     myajax.fetch({
         url:"http://localhost:4000/api/news",
         option:{},
@@ -23,10 +60,11 @@ class News extends Component {
           this.setState({
             paging:data.allPageNum
           },()=>{
-              console.log(this.state.paging,"1111")
+         
           })
         }
     })
+    this.getNewsLiseDate(1)
   }
   render() {
     return (
@@ -63,7 +101,7 @@ class News extends Component {
                 </dd>
               </dl>
             </div> */}
-            <Main/>
+            <Main newsList = {this.state.newsList}/>
             <Paging
             allPageNum = {this.state.paging}
             />
