@@ -110,12 +110,13 @@ li:hover .box{
 }
 }
 
-.png {
+.pngTitle {
     display: block;
     width: 1180px;
     height: 154px;
     background: url("~@/img/kp_tit.png") center no-repeat;
     margin: 80px  0;
+    margin-left:30px;
     text-indent: 1181px;
     overflow: hidden;
     white-space: nowrap;

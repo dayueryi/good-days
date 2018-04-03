@@ -4,7 +4,7 @@ import { Route,Switch,Redirect,NavLink ,Link} from 'react-router-dom';
 import React, { Component } from 'react';
 import './index.scss';
 import logo from '@/img/logo.png';
-import Jquery from 'jquery';
+import $ from 'jquery';
 const { Header, Content, Footer } = Layout;
 class Home extends Component {
     state = {}
@@ -24,60 +24,60 @@ class Home extends Component {
             <ul className="x-ul">
             <li >
                   <NavLink to="/home" activeClassName="active">
-                    <p>首页</p>
+                    <span>首页</span>
                     {/* <span>Home</span> */}
                   </NavLink>
                 </li>
                 <li>
                 <NavLink to="/show" activeClassName="active">
                 
-                  <p>最美客照</p>
+                  <span>最美客照</span>
                   {/* <span>Show</span> */}
                   </NavLink>
                 </li>
                 <li className="ul_li">
                 <NavLink to="/subject" activeClassName="active">
                 
-                  <p>
+                  <span>
                     主题类型
                     <ul className="small_ul">
                     <li>
-                      {/* <Link to=""> */}
+                      <Link to="/subjec?subjectKind=0">
                           内景
-                      {/* </Link> */}
+                      </Link>
                     </li>
                     <li>
-                      {/* <Link to=""> */}
+                      <Link to="/subject?subjectKind=1">
                           外景
-                      {/* </Link> */}
+                      </Link>
                     </li>
                   </ul>
-                  </p>
+                  </span>
                   {/* <span>Subject</span> */}
                   
                   </NavLink>
                 </li>
                 <li>
                 <NavLink to="/active" activeClassName="active">
-                  <p>最新活动</p>
+                  <span>最新活动</span>
                   {/* <span>Active</span> */}
                   </NavLink>
                 </li>  
                 <li>
                 <NavLink to="/news" activeClassName="active">
-                <p> 新闻中心</p>
+                <span> 新闻中心</span>
                {/* <span>News</span> */}
                   </NavLink>
                 </li> 
                 <li>
                 <NavLink to="/forum" activeClassName="active">
-                <p>粉丝论坛</p>
+                <span>粉丝论坛</span>
                 {/* <span>Forum</span> */}
                   </NavLink>
                 </li>
                 <li>
                 <NavLink to="/appointment" activeClassName="active">
-                  <p>在线预约</p>
+                  <span>在线预约</span>
                   {/* <span>Appointment</span> */}
                 </NavLink>
                 </li> 
@@ -90,9 +90,27 @@ class Home extends Component {
          )
     }
     componentDidMount(){
-        Jquery(".ul_li").hover(function(){
+<<<<<<< HEAD
+  
+        Jquery(".ul_li").click(function(){
+=======
+       /*  Jquery(".ul_li").hover(function(){
+>>>>>>> fd6073024327c4df5bd72a2de2496082306a9441
             Jquery(".small_ul").slideToggle("slow");
+        }) */
+        
+        $(".ul_li").click(function(){
+          $(".small_ul").slideToggle("slow");
         })
+        $(".ul_li").mouseleave(function(){
+          $(".small_ul").slideUp("slow");
+        })
+
+        Jquery(".ul_li").mouseleave(function(){
+          Jquery(".small_ul").slideUp("slow");
+      })
+
+       
     }
 }
  

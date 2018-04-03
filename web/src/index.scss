@@ -35,17 +35,17 @@ body,html,.App,#root{
             @include flex-direction(column);
             @include justify-content();
             @include align-items();  
-            p{
-              @include font-size(14px);   
-            }
             span{
               display: block;
-              @include font-size(12px);   
-              color:#fff;
+              @include font-size(14px);   
             }
+            // span{
+            //   display: block;
+            //   @include font-size(12px);   
+            //   color:#fff;
+            // }
             &.active{
               background: #f66;
-             
             }
           }
         }
