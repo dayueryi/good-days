@@ -4,6 +4,7 @@ import banner from "@/img/xinwen_tit.png";
 import store from "@/store/index.js"
 
 import Footerlist from "./../Footer/index.jsx";
+import Footer from './../Footer/index.jsx';
 import Main from "./w_main/index.jsx"
 import Paging from './paging/index.jsx';
 import myajax from "@/tool/myajax"
@@ -67,6 +68,7 @@ class News extends Component {
             allPageNum = {this.state.paging}
             />
           </div>
+          <Footer/>
         </div>
       </div>
     );

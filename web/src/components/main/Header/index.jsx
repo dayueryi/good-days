@@ -91,7 +91,7 @@ class Home extends Component {
     }
     componentDidMount(){
         Jquery(".ul_li").hover(function(){
-            
+            Jquery(".small_ul").slideToggle("slow");
         })
     }
 }

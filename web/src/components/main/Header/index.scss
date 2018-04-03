@@ -54,6 +54,7 @@
 }
 .small_ul{
   width:100%;
+
   position: absolute;
   top:64px;
   left:0;
@@ -63,7 +64,13 @@
   li{
     float: none;
     height: 60px;
+    line-height: 60px;
+    text-align: center;
+    &:hover{
+      background: #444;
+    }
   }
+  
 }
 
 
