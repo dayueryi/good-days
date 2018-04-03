@@ -9,7 +9,7 @@ class Home extends Component {
         <div className="box">
         <div className="x-content">
          <div className="center">
-         <h1 className="png">婚纱摄影客片</h1>
+         <h1 className="pngTitle">婚纱摄影客片</h1>
          <div className="module-c-r major-list-outer">
         <ul className="major-list">
 					<li className="major-item"> 

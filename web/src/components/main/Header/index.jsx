@@ -24,60 +24,60 @@ class Home extends Component {
             <ul className="x-ul">
             <li >
                   <NavLink to="/home" activeClassName="active">
-                    <p>首页</p>
+                    <span>首页</span>
                     {/* <span>Home</span> */}
                   </NavLink>
                 </li>
                 <li>
                 <NavLink to="/show" activeClassName="active">
                 
-                  <p>最美客照</p>
+                  <span>最美客照</span>
                   {/* <span>Show</span> */}
                   </NavLink>
                 </li>
                 <li className="ul_li">
                 <NavLink to="/subject" activeClassName="active">
                 
-                  <p>
+                  <span>
                     主题类型
                     <ul className="small_ul">
                     <li>
-                      {/* <Link to=""> */}
+                      <Link to="/subjec?subjectKind=0">
                           内景
-                      {/* </Link> */}
+                      </Link>
                     </li>
                     <li>
-                      {/* <Link to=""> */}
+                      <Link to="/subject?subjectKind=1">
                           外景
-                      {/* </Link> */}
+                      </Link>
                     </li>
                   </ul>
-                  </p>
+                  </span>
                   {/* <span>Subject</span> */}
                   
                   </NavLink>
                 </li>
                 <li>
                 <NavLink to="/active" activeClassName="active">
-                  <p>最新活动</p>
+                  <span>最新活动</span>
                   {/* <span>Active</span> */}
                   </NavLink>
                 </li>  
                 <li>
                 <NavLink to="/news" activeClassName="active">
-                <p> 新闻中心</p>
+                <span> 新闻中心</span>
                {/* <span>News</span> */}
                   </NavLink>
                 </li> 
                 <li>
                 <NavLink to="/forum" activeClassName="active">
-                <p>粉丝论坛</p>
+                <span>粉丝论坛</span>
                 {/* <span>Forum</span> */}
                   </NavLink>
                 </li>
                 <li>
                 <NavLink to="/appointment" activeClassName="active">
-                  <p>在线预约</p>
+                  <span>在线预约</span>
                   {/* <span>Appointment</span> */}
                 </NavLink>
                 </li> 
@@ -90,9 +90,16 @@ class Home extends Component {
          )
     }
     componentDidMount(){
-        Jquery(".ul_li").hover(function(){
+  
+        Jquery(".ul_li").click(function(){
             Jquery(".small_ul").slideToggle("slow");
         })
+
+        Jquery(".ul_li").mouseleave(function(){
+          Jquery(".small_ul").slideUp("slow");
+      })
+
+       
     }
 }
  

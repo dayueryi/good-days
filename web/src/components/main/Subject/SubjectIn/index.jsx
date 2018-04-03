@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import $ from 'jquery';
 import "./index.scss";
 // import png from '@/img/zp.png';
-
-import myajax from '@/tool/myajax.js';
 const SubMenu = Menu.SubMenu;
 class Subject extends Component {
   state = {
@@ -76,22 +74,6 @@ $(function(){
 	})
 	
 })
-    myajax.fetch({
-        url:'http://localhost:4000/subject/api?subjectKind'+subjectKind,
-        options:{
-          // options:{
-          // }
-        },
-        success:((data)=>{
-          // cb(data)
-          store.dispather({
-            type:"addSubject",
-            data:data
-          })
-        })
-    }
-     
-    ) 
 
   }
 

@@ -10,6 +10,7 @@ const news =  (state = [],action)=>{
         return state
             break;
     }
+    
 }
 
 export default news

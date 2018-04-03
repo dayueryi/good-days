@@ -1,4 +1,4 @@
-const todolist =  (state = [1],action)=>{
+const todolist =  (state = [],action)=>{
     const { type,data } = action
     switch (type) {
         case "addList":
