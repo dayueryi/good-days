@@ -9,23 +9,28 @@ class Paging extends Component {
          }
     }
     componentDidMount(){
-     
+        
+        
     }
     render() { 
+       
+        function page(length){
+            var res = [];
+            for(var i = 0; i < length; i++) {
+                var j = i+1
+                res.push( <li key={i}>
+                    < NavLink to={"/news/"+j} activeclass = "active">  
+                         {i*1+1}
+                         
+                     </NavLink>      
+                  </li>)
+              }
+              return res
+        }
         return ( 
             <ul className="w_news_paging">
-            {}
-                <li>
-               < NavLink to="/news/2" activeclass = "active">  
-                    1
-                    
-                </NavLink>      
-             </li>
-             <li>
-               < NavLink to="/news/3" activeclass = "active">  
-                    1
-                </NavLink>      
-             </li>
+                {page(this.props.allPageNum)}
+               
             </ul>
          )
     }
