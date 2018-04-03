@@ -9,6 +9,7 @@ import Headerlist from "./components/main/Header/index.jsx";
 import Newslist from "./components/main/News/index.jsx";
 import Forumlist from "./components/main/Forum/index.jsx";
 import Appointmentlist from "./components/main/Appointment/index.jsx";
+import ActiveDetail from './components/main/Active/ActiveDetail/index.jsx'
 import './App.css';
 
 import { Layout } from 'antd';
@@ -31,6 +32,7 @@ class App extends Component {
               <Route path="/news" component={Newslist}/>
               <Route path="/forum" component={Forumlist}/>
               <Route path="/appointment" component={Appointmentlist}/>
+              <Route path="/ActiveDetail" component={ActiveDetail}/>
               <Redirect to={{pathname:'/home'}}/>
           </Switch>
       </div>

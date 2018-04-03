@@ -50,7 +50,19 @@
             <li class = "<%- activeIndex == 3 ? 'active' : '' %>"><a href="/product?limitNum=4&pageCode=0"><i class="fa fa-link"></i> <span>商品列表</span></a></li>
             <li class = "<%- activeIndex == 4 ? 'active' : '' %>"><a href="/active?limitNum=4&pageCode=0"><i class="fa fa-link"></i> <span>活动列表</span></a></li>           
             <li class = "<%- activeIndex == 5 ? 'active' : '' %>"><a href="/news?limitNum=4&pageCode=0"><i class="fa fa-link"></i> <span>新闻列表</span></a></li>           
-            <li class = "<%- activeIndex == 6 ? 'active' : '' %>"><a href="/subject"><i class="fa fa-link"></i> <span>主题活动</span></a></li>   
+            <!-- <li class = "<%- activeIndex == 6 ? 'active' : '' %>"><a href="/subject"><i class="fa fa-link"></i> <span>主题活动</span></a></li>    -->
+            <li class="treeview <%- activeIndex == 6 ? 'active' : '' %>">
+                <a href="#"><i class="fa fa-link"></i> <span>主题活动</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="/subject">活动详情</a></li>
+                   
+                </ul>
+            </li>
+            
             <li class = "<%- activeIndex == 7 ? 'active' : '' %>"><a href="/detail"><i class="fa fa-link"></i> <span>主题详情</span></a></li>                   
         </ul>
         <!-- /.sidebar-menu -->
