@@ -8,18 +8,24 @@ import Active from '@/api/active.js'
 
 class Home extends Component {
     state={
-        imglist:[]
+        imglist:[],
+        bannerlist:'',
     }
     componentDidMount(){
        
         Active.active((data)=>{
         this.setState({
             imglist: data
+          })
+     }),
+     Active.activebanner((data)=>{
+        this.setState({
+            bannerlist: data[0]
           },()=>{
-              console.log(data)
+              console.log(data[0])
           })
      })
-     console.log(this.state.imglist)
+     
     }
     
 
@@ -36,20 +42,25 @@ class Home extends Component {
               <div className = "box">
                 <div className="x-content">
              
-                
+               
                     <div className="banner">
                     <div className="box"></div>
-                        <img src="" alt=""/>
+                        <img src={this.state.bannerlist.banner} alt=""/>
+               
                     </div>
                     <div className="fenjie">
-                        <img src="http://www.only1314.com/statics/model/images/activity_title.jpg" alt=""/>
+                        <img src={this.state.bannerlist.fenjie} alt=""/>
                     </div>
+               
+            
+                
+                   
 
                     <div className="activity">
                     { this.state.imglist.map((item, index) => {
                           return(
                         <div className="zhanshi" key={index}>
-                            <Link to={"/ActiveDetail/"+item.activeID} className="a">
+                            <Link to={"/activedetail/"+item.activeID} className="a">
                             <div className="pic">
                                 <div className="box"></div>
                                 <img src={item.activeAddress} alt=""/>

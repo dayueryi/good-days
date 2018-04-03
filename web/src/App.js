@@ -32,7 +32,7 @@ class App extends Component {
               <Route path="/news" component={Newslist}/>
               <Route path="/forum" component={Forumlist}/>
               <Route path="/appointment" component={Appointmentlist}/>
-              <Route path="/ActiveDetail" component={ActiveDetail}/>
+              <Route path="/activedetail" component={ActiveDetail}/>
               <Redirect to={{pathname:'/home'}}/>
           </Switch>
       </div>

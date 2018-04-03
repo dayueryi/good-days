@@ -8,7 +8,8 @@ class ActiveDetail extends Component{
         imglist:[]
     }
     componentDidMount(){
-       var activeID = this.props.location.pathname.split("/")[2];  
+       var activeID = this.props.location.pathname.split("/")[2]; 
+       console.log(activeID) 
      Active.goodslist((data)=>{
         this.setState({
             imglist: data
@@ -25,27 +26,35 @@ class ActiveDetail extends Component{
             <div className = "box">
                 <div className="x-content">
                 <div className="banner">
-                    {/* <img src="http://www.only1314.com/uploadfile/2018/0331/20180331080055373.jpg" alt=""/>
-                    <img src="http://www.only1314.com/uploadfile/2018/0331/20180331080055211.jpg" alt=""/>
-                    <img src="http://www.only1314.com/uploadfile/2018/0331/20180331080056918.jpg" alt=""/>
-                    <img src="http://www.only1314.com/uploadfile/2018/0331/20180331080056717.jpg" alt=""/>
-                    <img src="http://www.only1314.com/uploadfile/2018/0331/20180331080056404.jpg" alt=""/>
-                    <img src="http://www.only1314.com/uploadfile/2018/0331/20180331080056688.jpg" alt=""/>
-                    <img src="http://www.only1314.com/uploadfile/2018/0331/20180331080519425.jpg" alt=""/>
-                    <img src="http://www.only1314.com/uploadfile/2018/0331/20180331080519771.jpg" alt=""/>
-                    <img src="http://www.only1314.com/uploadfile/2018/0331/20180331080520184.jpg" alt=""/>
-                    <img src="http://www.only1314.com/uploadfile/2018/0331/20180331080521878.jpg" alt=""/> */}
-                    {/* <Link to="">
-                      <img src="http://www.only1314.com/uploadfile/2018/0331/20180331081035358.jpg" alt=""/>
-                      <img src="http://www.only1314.com/uploadfile/2018/0331/20180331081035770.jpg" alt=""/>
-                    </Link> */}
                      { 
                          this.state.imglist.map((item, index) => {
                           return(
                      <div key = { item.activeID }>
                         
-                           <img src = { item.activeAddress } />   
-                     
+                           <img src = { item.activeAddress } /> 
+                           <img src={item.jietu2} alt=""/>
+                           <Link to="/chat">
+                           <img src={item.qianggou} alt=""/>
+                           </Link>
+                           <img src={item.qianggoucontent} alt=""/>
+                           <Link to="/chat">
+                           <img src={item.qianggou2} alt=""/>
+                           </Link>
+                           <img src={item.qianggou2content} alt=""/>
+                           <Link to="/chat">
+                           <img src={item.qianggou3} alt=""/>
+                           </Link>
+                           <img src={item.qianggou3content} alt=""/>
+                           <Link to="/chat">
+                           <img src={item.qianggou4} alt=""/>
+                           </Link>
+                           <img src={item.detail1} alt=""/>
+                           <img src={item.detail2} alt=""/>
+                           <Link to="/chat">
+                           <img src={item.chat} alt=""/>
+                           </Link>
+                           
+                           
                     </div>
                 )
             })

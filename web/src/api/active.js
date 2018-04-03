@@ -23,6 +23,17 @@ export default{
             }
       }
       myajax.fetch(config)
+    },
+    activebanner(cb){
+      var config={
+            url:'http://localhost:4000/api/detail/activebanner',
+            options:{
+            },
+            success:(data)=>{
+               cb(data)
+            }
+      }
+      myajax.fetch(config)
     }
 }
 
