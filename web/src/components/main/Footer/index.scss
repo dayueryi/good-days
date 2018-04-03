@@ -1,5 +1,62 @@
-footer{
-  height:100px;
-  width:100%;
-  background:pink;
+.footer{
+ width:100%;
+ height: 200px;
+ margin-top:100px;
+ background: #181818;
+}
+.brandIntegrity {
+    background: #323232 url("~@/img/brandIntegrity.png") no-repeat center top;
+    height: 632px;
+    position: relative;
+}
+.brandIntegrity li.item1 {
+    margin: 0 0 0 -592px;
+}
+.brandIntegrity li {
+    width: 208px;
+    line-height: 24px;
+    color: #c8c8c8;
+    font-size: 16px;
+    font-family: Microsoft YaHei;
+    position: absolute;
+    top: 352px;
+    left: 50%;
+}
+.brandIntegrity li strong {
+    color: #fffc00;
+    font-size: 20px;
+    font-weight: normal;
+    height: 60px;
+    line-height: 30px;
+    display: block;
+    overflow: hidden;
+}
+.brandIntegrity li p {
+    height: 48px;
+    line-height: 24px;
+    display: block;
+    overflow: hidden;
+    margin-top: 44px;
+}
+.brandIntegrity li.item2 {
+    margin: 0 0 0 -332px;
+}
+.brandIntegrity li {
+    width: 208px;
+    line-height: 24px;
+    color: #c8c8c8;
+    font-size: 16px;
+    font-family: Microsoft YaHei;
+    position: absolute;
+    top: 352px;
+    left: 50%;
+}
+.brandIntegrity li.item3 {
+    margin: 0 0 0 -58px;
+}
+.brandIntegrity li.item4 {
+    margin: 0 0 0 196px;
+}
+.brandIntegrity li.item5 {
+    margin: 0 0 0 448px;
 }

@@ -10,7 +10,8 @@ class Home extends Component {
     render() { 
        
      return  (
-          <div className = "home">
+          <div className = "home" style={{background:"#eee"}}>
+           <div className="center">
                  <div className="Fs-box">
                       <div className="title">
                             <h2>热门主题</h2>
@@ -21,54 +22,39 @@ class Home extends Component {
                       <a>不看明星 不看模特 只看客照</a>
                       <a>拒绝千挑万选 每日客照接单</a>
                       </div>
-                      <div className="bx-cont bx-cont-2">
-                            <div className="bx-cont bx-cont-4">
-                                <div className="scrlpraise_guest">
-                                    <a href="javascript:;" className="prev"></a>
-                                    <div className="bd" id="hei">
-                                       <div className="tempWrap">
-                                            <ul className="clearfix">
-                                                <li>
-                                                    <a href="" className="active">
-                                                        <div className="img">        
-                                                                <img src="http://img.vc520.com/uploads/201803/3-1P32G64Z70-L.jpg" alt="三月第四周客照"/>
-                                                        </div>
-                                                        <div className="info">
-                                                            <p>POST TIME:2018-03-27</p>
-                                                            <span>三月第四周客照</span>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="" className="active">
-                                                        <div className="img">        
-                                                                <img src="http://img.vc520.com/uploads/201803/3-1P32G64Z70-L.jpg" alt="三月第四周客照"/>
-                                                        </div>
-                                                        <div className="info">
-                                                            <p>POST TIME:2018-03-27</p>
-                                                            <span>三月第四周客照</span>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="" className="active">
-                                                        <div className="img">        
-                                                                <img src="http://img.vc520.com/uploads/201803/3-1P32G64Z70-L.jpg" alt="三月第四周客照"/>
-                                                        </div>
-                                                        <div className="info">
-                                                            <p>POST TIME:2018-03-27</p>
-                                                            <span>三月第四周客照</span>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                       </div> 
-                                    </div>
-                                    <a href="javascript:;" className="next"></a>
-                                </div>
-                            </div>
-                            <div className="morebar"></div>
-                      </div>
+                      <div className="sieries">
+         <ul>
+            <li>
+                 <div className="box"></div>
+                 <img src="http://www.lyy99.com/uploads/2018/02/081739383734.jpg" alt=""/>
+                 <p> 非常时髦系列</p>
+                 <p>TIME / 2017.09.25</p>
+                 <p>潮流时装、视觉惊喜，艺术婚照的美学典范</p>
+            </li>
+            <li>
+                 <div className="box"></div>
+                 <img src="http://www.lyy99.com/uploads/2018/02/081739383734.jpg" alt=""/>
+                 <p> 非常时髦系列</p>
+                 <p>TIME / 2017.09.25</p>
+                 <p>潮流时装、视觉惊喜，艺术婚照的美学典范</p>
+            </li>
+            <li>
+                 <div className="box"></div>
+                 <img src="http://www.lyy99.com/uploads/2018/02/081739383734.jpg" alt=""/>
+                 <p> 非常时髦系列</p>
+                 <p>TIME / 2017.09.25</p>
+                 <p>潮流时装、视觉惊喜，艺术婚照的美学典范</p>
+            </li>
+            <li>
+                 <div className="box"></div>
+                 <img src="http://www.lyy99.com/uploads/2018/02/081739383734.jpg" alt=""/>
+                 <p> 非常时髦系列</p>
+                 <p>TIME / 2017.09.25</p>
+                 <p>潮流时装、视觉惊喜，艺术婚照的美学典范</p>
+            </li>
+         </ul>    
+         </div>
+         </div>
                 </div>      
           </div>
          )

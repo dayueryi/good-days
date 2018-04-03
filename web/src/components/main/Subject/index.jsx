@@ -12,8 +12,10 @@ class Subject extends Component {
      return  (
        <div className="box">
        <div className="x-content">
-        <div className="l-subject" style={{ width: 150,height:900}}>
-       
+         {/* <div className="l-subject" style={{ width: 150,height:900}}>
+      {
+
+     
         <Menu
           defaultSelectedKeys={['1']}
           defaultOpenKeys={['sub1']}
@@ -55,7 +57,9 @@ class Subject extends Component {
           </Menu.Item>
           
         </Menu>
-      </div>
+         } 
+      </div>  */}
+      
       </div>
       </div>
          )

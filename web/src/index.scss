@@ -64,13 +64,14 @@ body,html,.App,#root{
         @include flex();
         @include rect(100%,auto);
         @include overflow();
+       
       }
       .footer{
-        @include rect(100%,64px);
-        @include line-height(64px);
-        @include background-color(#f66);
-        @include text-align();
-        @include font-size(18px);
+        // @include rect(100%,64px);
+        // @include line-height(64px);
+        // @include background-color(#f66);
+        // @include text-align();
+        // @include font-size(18px);
       }
     }
   }

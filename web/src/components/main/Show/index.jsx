@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Footer from './../Footer/index.jsx';
 import './index.scss';
 class Home extends Component {
     state = {}
@@ -9,38 +9,7 @@ class Home extends Component {
         <div className="box">
         <div className="x-content">
          <div className="center">
-         <div className="sieries">
-         <ul>
-            <li>
-                 <div className="box"></div>
-                 <img src="http://www.lyy99.com/uploads/2018/02/081739383734.jpg" alt=""/>
-                 <p> 非常时髦系列</p>
-                 <p>TIME / 2017.09.25</p>
-                 <p>潮流时装、视觉惊喜，艺术婚照的美学典范</p>
-            </li>
-            <li>
-                 <div className="box"></div>
-                 <img src="http://www.lyy99.com/uploads/2018/02/081739383734.jpg" alt=""/>
-                 <p> 非常时髦系列</p>
-                 <p>TIME / 2017.09.25</p>
-                 <p>潮流时装、视觉惊喜，艺术婚照的美学典范</p>
-            </li>
-            <li>
-                 <div className="box"></div>
-                 <img src="http://www.lyy99.com/uploads/2018/02/081739383734.jpg" alt=""/>
-                 <p> 非常时髦系列</p>
-                 <p>TIME / 2017.09.25</p>
-                 <p>潮流时装、视觉惊喜，艺术婚照的美学典范</p>
-            </li>
-            <li>
-                 <div className="box"></div>
-                 <img src="http://www.lyy99.com/uploads/2018/02/081739383734.jpg" alt=""/>
-                 <p> 非常时髦系列</p>
-                 <p>TIME / 2017.09.25</p>
-                 <p>潮流时装、视觉惊喜，艺术婚照的美学典范</p>
-            </li>
-         </ul>    
-         </div>
+         <h1 className="png">婚纱摄影客片</h1>
          <div className="module-c-r major-list-outer">
         <ul className="major-list">
 					<li className="major-item"> 
@@ -160,7 +129,9 @@ class Home extends Component {
 				</ul>
                 </div>
                 </div>
+                <Footer/>
                 </div>
+              
         </div>
 
          )

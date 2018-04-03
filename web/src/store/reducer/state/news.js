@@ -1,15 +1,15 @@
-const todolist =  (state = [1],action)=>{
+const news =  (state = [],action)=>{
     const { type,data } = action
     switch (type) {
-        case "addList":
-        return [...state,data]
+        case "getPage":
+       
+        return data
             break;
     
         default:
         return state
             break;
     }
-    
 }
 
-export default todolist
+export default news

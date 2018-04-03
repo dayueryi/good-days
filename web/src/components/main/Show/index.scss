@@ -68,7 +68,7 @@
         }
         .box{
             position: absolute;
-            width: 293px;
+            width:293px;
             height: 0;
             top:0;
             opacity: 0.6;
@@ -108,4 +108,18 @@ li:hover .box{
         color:#fd3434;
     }
 }
+}
+
+.png {
+    display: block;
+    width: 1180px;
+    height: 154px;
+    background: url("~@/img/kp_tit.png") center no-repeat;
+    margin: 80px  0;
+    text-indent: 1181px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.center{
+    margin-bottom:60px;
 }

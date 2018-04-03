@@ -1,9 +1,10 @@
 
 import { Layout, Menu, Breadcrumb } from 'antd';
-import { Route,Switch,Redirect,NavLink } from 'react-router-dom';
+import { Route,Switch,Redirect,NavLink ,Link} from 'react-router-dom';
 import React, { Component } from 'react';
 import './index.scss';
 import logo from '@/img/logo.png';
+import Jquery from 'jquery';
 const { Header, Content, Footer } = Layout;
 class Home extends Component {
     state = {}
@@ -24,45 +25,60 @@ class Home extends Component {
             <li >
                   <NavLink to="/home" activeClassName="active">
                     <p>首页</p>
-                    <span>Home</span>
+                    {/* <span>Home</span> */}
                   </NavLink>
                 </li>
                 <li>
                 <NavLink to="/show" activeClassName="active">
                 
                   <p>最美客照</p>
-                  <span>Show</span>
+                  {/* <span>Show</span> */}
                   </NavLink>
                 </li>
-                <li>
+                <li className="ul_li">
                 <NavLink to="/subject" activeClassName="active">
                 
-                  <p>主题类型</p>
-                  <span>Subject</span>
+                  <p>
+                    主题类型
+                    <ul className="small_ul">
+                    <li>
+                      {/* <Link to=""> */}
+                          内景
+                      {/* </Link> */}
+                    </li>
+                    <li>
+                      {/* <Link to=""> */}
+                          外景
+                      {/* </Link> */}
+                    </li>
+                  </ul>
+                  </p>
+                  {/* <span>Subject</span> */}
+                  
                   </NavLink>
                 </li>
                 <li>
                 <NavLink to="/active" activeClassName="active">
                   <p>最新活动</p>
-                  <span>Active</span>
+                  {/* <span>Active</span> */}
                   </NavLink>
                 </li>  
                 <li>
                 <NavLink to="/news" activeClassName="active">
                 <p> 新闻中心</p>
-               <span>News</span>
+               {/* <span>News</span> */}
                   </NavLink>
                 </li> 
                 <li>
                 <NavLink to="/forum" activeClassName="active">
                 <p>粉丝论坛</p>
-                <span>Forum</span>
+                {/* <span>Forum</span> */}
                   </NavLink>
                 </li>
                 <li>
                 <NavLink to="/appointment" activeClassName="active">
                   <p>在线预约</p>
-                  <span>Appointment</span>
+                  {/* <span>Appointment</span> */}
                 </NavLink>
                 </li> 
             </ul>
@@ -72,6 +88,11 @@ class Home extends Component {
 
          
          )
+    }
+    componentDidMount(){
+        Jquery(".ul_li").hover(function(){
+            Jquery(".small_ul").slideToggle("slow");
+        })
     }
 }
  
