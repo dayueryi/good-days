@@ -9,7 +9,20 @@ const { Header, Content, Footer } = Layout;
 class Home extends Component {
     state = {}
     render() { 
-       
+      var str = (<NavLink to="/subject" activeClassName="active">
+      <span>
+        主题类型
+      </span>
+    </NavLink>)
+       if(this.props.flag==false){
+        str = (<NavLink to="" activeClassName="active">
+        <span>
+          主题类型
+        </span>
+      </NavLink>
+        )
+      }
+      
      return  (
         <div className = "x-container">
         <div className="x-header">
@@ -36,26 +49,28 @@ class Home extends Component {
                   </NavLink>
                 </li>
                 <li className="ul_li">
-                <NavLink to="/subject" activeClassName="active">
-                
+                {/* <NavLink to="/subject" activeClassName="active">
                   <span>
                     主题类型
+                  </span>
+                </NavLink> */}
+                {str}
                     <ul className="small_ul">
                     <li>
-                      <Link to="/subjec?subjectKind=0">
+                      <Link to="/subject/0">
                           内景
                       </Link>
                     </li>
                     <li>
-                      <Link to="/subject?subjectKind=1">
+                      <Link to="/subject/1">
                           外景
                       </Link>
                     </li>
                   </ul>
-                  </span>
+                  
                   {/* <span>Subject</span> */}
                   
-                  </NavLink>
+                 
                 </li>
                 <li>
                 <NavLink to="/active" activeClassName="active">
@@ -90,15 +105,13 @@ class Home extends Component {
          )
     }
     componentDidMount(){
-<<<<<<< HEAD
-  
-        Jquery(".ul_li").click(function(){
-=======
        /*  Jquery(".ul_li").hover(function(){
->>>>>>> fd6073024327c4df5bd72a2de2496082306a9441
             Jquery(".small_ul").slideToggle("slow");
         }) */
         
+        
+
+
         $(".ul_li").click(function(){
           $(".small_ul").slideToggle("slow");
         })
@@ -106,9 +119,9 @@ class Home extends Component {
           $(".small_ul").slideUp("slow");
         })
 
-        Jquery(".ul_li").mouseleave(function(){
-          Jquery(".small_ul").slideUp("slow");
-      })
+      //   Jquery(".ul_li").mouseleave(function(){
+      //     Jquery(".small_ul").slideUp("slow");
+      // })
 
        
     }
