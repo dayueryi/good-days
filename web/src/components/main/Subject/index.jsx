@@ -3,6 +3,7 @@ import { Icon, Button, Menu } from "antd";
 import { Link } from "react-router-dom";
 import $ from 'jquery';
 import "./index.scss";
+import store from '@/store/index.js'
 // import png from '@/img/zp.png';
 
 import myajax from '@/tool/myajax.js';
@@ -76,8 +77,9 @@ $(function(){
 	})
 	
 })
+console.log(this)
     myajax.fetch({
-        url:'http://localhost:4000/subject/api?subjectKind'+subjectKind,
+        // url:'http://localhost:4000/subject/api?subjectKind'+subjectKind,
         options:{
           // options:{
           // }
