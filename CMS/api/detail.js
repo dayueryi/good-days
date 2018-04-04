@@ -39,4 +39,44 @@ router.get('/workdetail', function(req, res, next) {
     })
 });
 
+router.get('/activedetail',function(req,res,next){
+    var activeID=url.parse(req.url,true).query.activeID;
+
+    mysql.connect((db)=>{
+        var queryObj={
+            activeID
+        };
+        console.log(activeID,"------------")
+        var showObj={};
+        mysql.find(db,'activedetail',queryObj,showObj,(result)=>{
+            res.send(result);
+            console.log(result)
+            db.close()
+        })
+    })
+})
+router.get('/active',function(req,res,next){
+    mysql.connect((db)=>{
+        var queryObj={};
+        var showObj={};
+        mysql.find(db,'active',queryObj,showObj,(result)=>{
+            res.send(result);
+            console.log(result)
+            db.close()
+        })
+    })
+})
+
+router.get('/activebanner',function(req,res,next){
+    mysql.connect((db)=>{
+        var queryObj={};
+        var showObj={};
+        mysql.find(db,'activebanner',queryObj,showObj,(result)=>{
+            res.send(result);
+            db.close()
+        })
+    })
+})
+
+
 module.exports = router;
