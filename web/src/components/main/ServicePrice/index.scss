@@ -38,13 +38,12 @@ a {
   background: #c8bb9b;
   border: 1px solid #d6ccb4;
   margin-left: 24px;
-  // &.active{
-  //   background: #e2404d;
-  // }
+  
   &:hover{
       background: #e2404d;
     }
 }
+
 }
 .neirong {
   width: 1200px;
@@ -66,7 +65,7 @@ a {
       a {
         color: #8a8a8a;
         text-decoration: none;
-        img {
+        .suolue {
           display: block;
           float: left;
           width: 700px;

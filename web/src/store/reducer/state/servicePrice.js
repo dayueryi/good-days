@@ -1,10 +1,10 @@
-const subjectDetail =  (state = [],action)=>{
+const servicePrice =  (state = [],action)=>{
     const { type,data } = action
     switch (type) {
      
-        case "subjectDetail":
+        case "servicePriceList":
        
-        return data[0]
+        return data
             break;
         default:
         return state
@@ -13,4 +13,4 @@ const subjectDetail =  (state = [],action)=>{
     
 }
 
-export default subjectDetail
+export default servicePrice

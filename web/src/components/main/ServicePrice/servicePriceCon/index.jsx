@@ -15,14 +15,14 @@ class Subject extends Component {
 
     if(store.getState().servicePrice){
       var arrs = [];
-                store.getState().servicePrice.forEach(item => {
+          store.getState().servicePrice.forEach(item => {
                   arrs.push(
                     <li key={item.servicePriceID}>
                       <NavLink to="">
                         <img
                           className="suolue"
-                          src="http://www.toppic.com.cn/images/index/baojia/35888.jpg"
-                          alt="高端定制-H1套系"
+                          src={item.servicePriceImg}
+                          alt={item.servicePriceName}
                         />
                       </NavLink>
                       <div className="d1">
@@ -30,15 +30,11 @@ class Subject extends Component {
                           <span className="s1 png">{item.servicePrice}</span>
                           <h2>
                             <NavLink to="">
-                              高端定制-H1套系
+                            {item.servicePriceName}
                             </NavLink>
                           </h2>
                           <div className="p">
-                            中国“马尔代夫”蜈支洲岛、非诚勿扰2取景地亚龙湾国家森林公园六大主题拍摄；
-                            再送游艇/海边马/跑车/水下/私家园林夜景/咖啡之翼/巴洛克内景任选2拍摄；
-                            价值3800元微电影半天拍摄；
-                            总监级摄影师、总监级造型师、灯光师三对一创意式拍摄；
-                            签署协议，保障消费者权益，不满意重拍，重拍不满意退款，全程无隐形消费。
+                           {item.servicePriceTxt}
                           </div>
                         </div>
                         <div className="d3">
@@ -50,56 +46,41 @@ class Subject extends Component {
                           
                             <span className="png">
                             </span> 
-                            <b>加入购物车</b>
+                            <b>抢订档期</b>
                           </NavLink>
                         </div>
                       </div>
                     </li>
                   )
-                })
-              
-      
-      
+                }) 
     }
 
   return ( <ul>{arrs}</ul>);
 
   }
 
-  getServicePriceDate=(serviceType)=>{
-    myajax.fetch({
-        url:"http://localhost:4000/subject/api?serviceType="+serviceType,
-        option:{},
-        success:
-        (data)=>{
-              console.log(data,"77777777++++++++++++++++++++++++++");
-              
-        //   this.setState({
-        //     subjectKindData:data
-        //   })
-        
-        // (data)=>{  
-         store.dispatch({
-           type:"servicePriceList",
-           data:data,
-         })
-        // console.log(subjectKind,"-------------subjectKind -------------")
-        console.log(store.getState().servicePrice,"----66666--   redux -------------")
-        // this.state.subjectKind = store.getState();
-        // console.log(subjectKind,"-------------subjectKindData -------------")
-    //    console.log(subjectKindData,"-------------subjectKindData -------------")
-        
-      }
-
-       })
-    }
+  // getServicePriceDate=(serviceType)=>{
+  //   myajax.fetch({
+  //       url:"http://localhost:4000/servicePrice/servicePriceApi?serviceType="+serviceType,
+  //       option:{},
+  //       success:
+  //       (data)=>{
+  //             // console.log(data,"77777777++++++++++++++++++++++++++");
+  //        store.dispatch({
+  //          type:"servicePriceList",
+  //          data:data,
+  //        })
+       
+  //       console.log(store.getState().servicePrice,"----66666--   redux -------------")
+  //     }
+  //      })
+  //   }
   
-  componentDidMount(){
-   
-    //   console.log(this.props.location.pathname.split("=")[1]);
-      this.getServicePriceDate(this.props.location.pathname.split("=")[1]);
+  // componentDidMount(){
+  //     console.log(this.props.location.pathname.split("=")[1]);
+  //     this.getServicePriceDate(this.props.location.pathname.split("=")[1]);
   
-  }
+  // }
 
 }
 

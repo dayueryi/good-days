@@ -16,9 +16,9 @@ const todolist =  (state = [],action)=>{
         case "templateList":
             return [...state,data]
             break;
-        // case "templateList":
-        //     return [...state,data]
-        //     break;
+        case "servicePriceList":
+            return [...state,data]
+            break;
         default:
         return state
             break;

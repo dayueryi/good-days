@@ -1,8 +1,17 @@
 .ga_wrap {
     width: 1100px;
-    margin: 60px auto 60px auto;
+    height: auto;
+    margin: 5px auto 5px auto;
 }
-.ga_wrap img {
+.ga_wrap .imgLi{
+    width: 1100px;
+    height: 739px;
+    margin: 5px auto 5px auto;
+}
+
+.ga_wrap .img {
+    width:1100px;
+    height: 739px;
     padding: 10px;
     margin: 5px;
     background: #fff;

@@ -46,7 +46,7 @@ class Subject extends Component {
         })
        
         console.log(subjectID,"555555555555");
-        console.log(store.getState().subjectDetail[0].imgs,"==== ===== subjectDetail  ====");
+        console.log(store.getState().subjectDetail[0].imgs," +==++==+=====subjectDetail -----------------");
       })
   }) 
   }

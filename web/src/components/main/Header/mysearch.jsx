@@ -16,10 +16,9 @@
 //                 <img src={logo} alt="111"/>
 //             </div>
 //             <div className="search">
-//                 <input type="text" onChange={props.getVal}/>
-//                 <span onClick={props.onClick}>搜索</span>
-//                 {/* <input type="text"/>
-//                 <span >搜索</span> */}
+              
+//                 <input type="text"/>
+//                 <span >搜索</span>
 //             </div>
             
 //             <ul className="x-ul">

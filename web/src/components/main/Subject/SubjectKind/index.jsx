@@ -21,7 +21,7 @@ class Subject extends Component {
                 store.getState().subject.forEach(element => {
                   arrs.push(
                     <li key={element.subjectID}>
-                    <Link to={"/subject/subjectDetail/"+element.subjectID}>
+                    <Link className="awidth" to={"/subject/subjectDetail/"+element.subjectID}>
                     <div className="bg"></div>
                     
                     <img src={element.subjectImgSrc} alt={element.subjectName} />

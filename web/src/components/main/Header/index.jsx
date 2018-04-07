@@ -5,6 +5,8 @@ import React, { Component } from 'react';
 import './index.scss';
 import logo from '@/img/logo.png';
 import $ from 'jquery';
+import myajax from '@/tool/myajax.js';
+import store from '@/store/index.js';
 const { Header, Content, Footer } = Layout;
 class Home extends Component {
     state = {}
@@ -30,10 +32,8 @@ class Home extends Component {
                 <img src={logo} alt="111"/>
             </div>
             <div className="search">
-                {/* <input type="text" onChange={props.getVal}/>
-                <span onClick={props.onClick}>搜索</span> */}
-                <input type="text"/>
-                <span >搜索</span>
+                <input type="text" ref="getVal"/>
+                <span onClick={this.searchHandler}>搜索</span>
             </div>
             
             <ul className="x-ul">
@@ -79,44 +79,49 @@ class Home extends Component {
                 </li> 
                 <li>
                 
-                    <NavLink to="/news/1" activeClassName="active">
+                    <NavLink to="/news" activeClassName="active">
                     <span> 新闻中心</span>
                     </NavLink>
                 </li> 
                 <li>
                     <NavLink to="/forum" activeClassName="active">
-                    <span>粉丝论坛</span>
+                        <span>粉丝论坛</span>
                     </NavLink>
                 </li>
                 
             </ul>
             </div>
         
-        </div>
-
-         
+        </div> 
          )
     }
     componentDidMount(){
-       /*  Jquery(".ul_li").hover(function(){
-            Jquery(".small_ul").slideToggle("slow");
-        }) */
-        
-        
-
-
         $(".ul_li").click(function(){
           $(".small_ul").slideToggle("slow");
         })
         $(".ul_li").mouseleave(function(){
           $(".small_ul").slideUp("slow");
         })
-
-      //   Jquery(".ul_li").mouseleave(function(){
-      //     Jquery(".small_ul").slideUp("slow");
-      // })
-
+        console.log(this.refs.getVal);
        
+    }
+    // getVal(){
+      
+    // }
+    searchHandler(){
+
+        myajax.fetch({
+          // url:'http://localhost:4000/api/searchApi',
+          options:{},
+          success:((data)=>{
+          store.dispatch({
+              type:"searchList",
+              data:data
+            })
+            console.log(store.getState().search,"==== =====  search  ====");
+          })
+      }) 
+    
     }
 }
  

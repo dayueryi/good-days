@@ -153,4 +153,36 @@ router.get('/deleteAddress', function(req, res, next) {
     })
 }); */
 
+router.get('/searchApi', function(req, res, next) {
+    var subjectKind = url.parse(url.req,true).query.subjectKind;
+    var subjectAddress = url.parse(url.req,true).query.subjectAddress;
+    if(subjectKind){
+        var queryObj = {
+            subjectKind:subjectKind
+        }
+    }else if(subjectAddress){
+        var queryObj = {
+            subjectAddress:subjectAddress
+        };
+    }else{
+        var queryObj = {};
+    }
+        mysql.connect(function(db){
+            // var queryObj = {};
+            var showObj = {_id:0};
+        mysql.find(db, 'samllnav', queryObj, showObj, function(result) {
+                var obj = {
+                    title: "听风少年-用户",
+                    activeIndex: 0,
+                    tip: '',
+                    result: result,
+                }
+                res.send(result);
+                db.close();
+            })
+        })
+    });
+
+
+
 module.exports = router;
