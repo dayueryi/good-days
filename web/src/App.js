@@ -5,6 +5,7 @@ import Active from './components/main/Active/index.jsx';
 import Show from './components/main/Show/index.jsx';
 import Subject from './components/main/Subject/index.jsx';
 import Home from "./components/main/Home/index.jsx";
+import Book from "./components/main/Book/index.jsx";
 import Headerlist from "./components/main/Header/index.jsx";
 import Newslist from "./components/main/News/index.jsx";
 import NewsDetail from "./components/main/News/NewsDetail/index.jsx";
@@ -67,14 +68,11 @@ searchDataHandler(){
               <Route path="/subject" component={Subject}/>
               <Route path="/news/:pageID" component={Newslist}/>
               <Route path="/news" component={Newslist}/>
-<<<<<<< HEAD
-=======
               <Route path="/newsdetail/:newsID" component={NewsDetail}/>
->>>>>>> 0fc10d1cd94999a66ee7caf252b4db60d3d4b74d
               <Route path="/forum" component={Forumlist}/>
               <Route path="/servicePrice/:serviceType" component={ServicePrice}/>
               <Route path="/servicePrice" component={ServicePrice}/>
-              
+              <Route path="/book" component={Book}/>
           </Switch>
       </div>
        

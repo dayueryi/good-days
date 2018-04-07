@@ -102,7 +102,7 @@ class Home extends Component {
         $(".ul_li").mouseleave(function(){
           $(".small_ul").slideUp("slow");
         })
-        console.log(this.refs.getVal);
+       // console.log(this.refs.getVal);
        
     }
     // getVal(){
