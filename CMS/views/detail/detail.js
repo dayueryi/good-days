@@ -61,6 +61,24 @@ router.post("/addDetailAction", uploadDetail.array('subjectImg'), (req, res, nex
     })
   
 })
+
+router.get('/subjectdetail', function(req, res, next) {
+    var subjectID = url.parse(req.url,true).query.subjectID;
+    
+    mysql.connect((db)=>{
+        var queryObj = {
+            subjectID:subjectID
+        };
+        console.log(queryObj,"------------")
+        var showObj = {};
+        mysql.find(db,'detail',queryObj,showObj,(result)=>{
+           res.send(result);
+            // res.render('updateAddress',obj);
+            db.close();
+        })
+    })
+});
+
 /* router.post('/addSubjectAction',uploadSubject.single('subjectImg'), function(req, res, next) {
     var obj = req.body;
     // console.log(obj);

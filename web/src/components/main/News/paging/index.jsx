@@ -25,7 +25,7 @@ class Paging extends Component {
                      </NavLink>      
                   </li>)
               }
-              return res
+              return res;
         }
         return ( 
             <ul className="w_news_paging">

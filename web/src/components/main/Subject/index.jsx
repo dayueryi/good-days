@@ -3,10 +3,10 @@ import { Icon, Button, Menu } from "antd";
 import {Router, Route,Switch,Redirect,Link } from 'react-router-dom';
 import $ from 'jquery';
 import "./index.scss";
-import SubjectCon from './SubjectCon/';
+import SubjectCon from './SubjectCon/index.jsx';
 import SubjectIn from './SubjectIn/index.jsx';
 import SubjectOut from './SubjectOut/index.jsx';
-// import png from '@/img/zp.png';
+import SubjectKind from './SubjectKind/index.jsx';
 import Footer from './../Footer/index.jsx';  
 import myajax from '@/tool/myajax.js';
 import store from '@/store/index.js';
@@ -14,7 +14,7 @@ const SubMenu = Menu.SubMenu;
 class Subject extends Component {
   state = {
     collapsed: false,
-    
+    subjectKind:''
   };
   render() {
     return (
@@ -22,8 +22,8 @@ class Subject extends Component {
         <div className="x-content">
        
         <Switch>
-          <Route path="/subject/0" component={SubjectIn} />
-          <Route path="/subject/1" component={SubjectOut } />
+          <Route path="/subject/subjectKind=0" component={SubjectKind} /> 
+           <Route path="/subject/subjectKind=1" component={SubjectKind } />
           <Route path="/subject" component={SubjectCon} />
         </Switch>
        
@@ -33,7 +33,40 @@ class Subject extends Component {
       </div>
     );
   }
-  componentDidMount(subjectKind){
+  // getSubjectLiseDate=(subjectKind)=>{
+  //   myajax.fetch({
+  //     url:"http://localhost:4000/subject/api?subjectKind="+subjectKind,
+  //     option:{},
+  //     success:
+  //     (data)=>{
+            
+  //       this.setState({
+  //         subjectKind:data,
+         
+  //       })
+      
+      // (data)=>{  
+      //  store.dispatch({
+        //  type:"subjectList",
+        //  data:data,
+      //  })
+      // console.log(subjectKind,"-------------subjectKind -------------")
+      //console.log(store.getState().subject,"-------------   redux -------------")
+      // this.state.subjectKind = store.getState();
+      // console.log(subjectKind,"-------------subjectKindData -------------")
+  //   }
+    
+  //    })
+  // }
+
+  // componentWillReceiveProps(nextProps){
+  //   //console.log(nextProps.match.params.pageID)
+  //   if (nextProps.location.pathname != this.props.location.pathname) {
+  //     var subjectKind = nextProps.match.params.subjectKind
+  //     this.getSubjectLiseDate()
+  //    } 
+  // }
+  componentDidMount(){
     
       $(function(){
 
@@ -47,24 +80,19 @@ class Subject extends Component {
 console.log(this)
     myajax.fetch({
         url:'http://localhost:4000/subject/api',
-        options:{
-          // options:{
-          // }
-        },
+        options:{},
         success:((data)=>{
-          // cb(data)
          store.dispatch({
             type:"subjectList",
             data:data
           })
-          console.log(store.getState().subject,"====  redux  ====");
+
+          console.log(store.getState().subject,"==== ===== redux  ====");
         })
     }
      
     ) 
-
   }
-
 }
 
-export default Subject;
+ export default Subject;

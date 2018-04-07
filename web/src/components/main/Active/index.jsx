@@ -51,11 +51,6 @@ class Home extends Component {
                     <div className="fenjie">
                         <img src={this.state.bannerlist.fenjie} alt=""/>
                     </div>
-               
-            
-                
-                   
-
                     <div className="activity">
                     { this.state.imglist.map((item, index) => {
                           return(
