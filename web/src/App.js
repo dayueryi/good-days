@@ -15,7 +15,7 @@ import SubjectDetail from './components/main/Subject/SubjectDetail/index.jsx';
 
 
 import store from '@/store/index.js';
-// import ShowDetail from './components/main/Show/ShowDetail/index.jsx';
+import ShowDetail from './components/main/Show/ShowDetail/index.jsx';
 import './App.css';
 
 import { Layout } from 'antd';
@@ -59,7 +59,7 @@ searchDataHandler(){
            <Switch>
               <Route path="/home" component={Home}/>
           
-              {/* <Route path="/show/showDetail/:templateID" component={ShowDetail}/> */}
+              <Route path="/show/showDetail/:templateID" component={ShowDetail}/>
               <Route path="/subject/subjectDetail/:subjectID" component={SubjectDetail}/>
               <Route path="/activedetail" component={ActiveDetail}/>
               <Route path="/active" component={Active}/>
@@ -67,10 +67,7 @@ searchDataHandler(){
               <Route path="/subject" component={Subject}/>
               <Route path="/news/:pageID" component={Newslist}/>
               <Route path="/news" component={Newslist}/>
-<<<<<<< HEAD
-=======
               <Route path="/newsdetail/:newsID" component={NewsDetail}/>
->>>>>>> 0fc10d1cd94999a66ee7caf252b4db60d3d4b74d
               <Route path="/forum" component={Forumlist}/>
               <Route path="/servicePrice/:serviceType" component={ServicePrice}/>
               <Route path="/servicePrice" component={ServicePrice}/>

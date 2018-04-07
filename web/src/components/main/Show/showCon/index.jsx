@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import { Carousel } from "antd";
 import "./index.scss";
-import banner01 from "@/img/banner01.jpg";
-import banner02 from "@/img/banner02.jpg";
-import banner03 from "@/img/banner03.jpg";
-import banner04 from "@/img/banner04.jpg";
+import {Link} from 'react-router-dom';
 import store from '@/store/index.js';
 class Home extends Component {
   state = {};
@@ -14,8 +11,9 @@ class Home extends Component {
                 store.getState().template.forEach(element => {
                   arrs.push(
                     <li className="major-item" key={element.templateID}>
-                        <div className="box" />
-                        <a href="" target="_blank">
+                    <Link to={"/show/showDetail/"+element.templateID} target="_blank">
+                        <div className="box" ></div>
+                        
                           <span className="txt-hide front-face">
                             <img className="img" src={element.templateLinkSrc} title={element.templateName} />
                           </span>
@@ -25,7 +23,7 @@ class Home extends Component {
                             <p>{element.templateTitle}</p>
                             <p>景点：{element.addressType}</p>
                           </div>
-                        </a>
+                        </Link>
                     </li>
                    
                   )
