@@ -90,12 +90,7 @@ class Home extends Component {
          )
     }
     componentDidMount(){
-<<<<<<< HEAD
-  
-        Jquery(".ul_li").click(function(){
-=======
        /*  Jquery(".ul_li").hover(function(){
->>>>>>> fd6073024327c4df5bd72a2de2496082306a9441
             Jquery(".small_ul").slideToggle("slow");
         }) */
         
@@ -106,10 +101,7 @@ class Home extends Component {
           $(".small_ul").slideUp("slow");
         })
 
-        Jquery(".ul_li").mouseleave(function(){
-          Jquery(".small_ul").slideUp("slow");
-      })
-
+      
        
     }
 }

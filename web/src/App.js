@@ -30,14 +30,10 @@ class App extends Component {
               <Route path="/show" component={Show}/>
               <Route path="/subject" component={Subject}/>
               <Route path="/news/:pageID" component={Newslist}/>
+              <Route path="/news/" component={Newslist}/>
               <Route path="/forum" component={Forumlist}/>
               <Route path="/appointment" component={Appointmentlist}/>
-<<<<<<< HEAD
-              <Route path="/activedetail" component={ActiveDetail}/>
-              <Redirect to={{pathname:'/home'}}/>
-=======
               
->>>>>>> a23a6468135a24f8a57e8711fc659d9253b04aa4
           </Switch>
       </div>
        

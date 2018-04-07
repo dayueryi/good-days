@@ -76,7 +76,7 @@ $(function(){
 	})
 	
 })
-    myajax.fetch({
+   /*  myajax.fetch({
         url:'http://localhost:4000/subject/api?subjectKind'+subjectKind,
         options:{
           // options:{
@@ -91,7 +91,7 @@ $(function(){
         })
     }
      
-    ) 
+    )  */
 
   }
 
