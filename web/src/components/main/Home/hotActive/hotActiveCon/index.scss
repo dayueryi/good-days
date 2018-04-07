@@ -1,0 +1,135 @@
+a{
+  text-decoration: none;
+}
+body{
+  background: #eee;
+}
+.home{
+  background: #eee;
+}
+.Fs-box {
+  // background: #1e1e1e;
+  min-width: 1200px;
+  padding: 40px  50px;
+  .title {
+    text-align: center;
+    font-weight: 100;
+    h2 {
+      font-weight: 100;
+      font-size: 28px;
+      color: #e7e7e7;
+  }
+  h3 {
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #636363;
+    font-weight: normal;
+}
+.line {
+  height: 1px;
+  width: 36px;
+  background: #c6a04e;
+  margin: 10px auto;
+}
+}
+.target-bar {
+  text-align: center;
+  padding: 18px 0 0px;
+  color: #e7e7e7;
+  margin-bottom: 40px;
+  a {
+    color: #a5a5a5;
+    font-size: 16px;
+    margin: 0 10px;
+    font-weight: 100;
+  }
+  
+}
+.en-word {
+  text-align: center;
+  margin-bottom: 26px;
+  img {
+    border: 0px;
+    outline-width: 0px;
+    vertical-align: top;
+}
+}
+.bx-cont {
+  width: 1220px;
+  margin: 0 auto;
+}
+.scrlpraise_guest {
+  position: relative;
+  width: 1220px;
+  margin: 0 auto;
+  // margin-left:-60px;
+//   a.prev {
+//     left: -30px;
+//     display: block;
+//     width: 30px;
+//     height: 58px;
+//     position: absolute;
+//     top: 90px;
+// }
+.tempWrap{
+  overflow:hidden;
+  position:relative;
+  width:1220px;
+.clearfix{
+    width: 3168px;
+    left: 0px; 
+    position:relative; 
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px;
+  
+    li{
+      float: left;
+      width: 295px;
+      height:260px;
+      margin: 0 5px;
+      position: relative;
+      overflow: hidden;
+      p {
+        display: block;
+        position: relative;
+    }
+      a {
+        display: block;
+        // width: 380px;
+      // height:600px;
+        position: relative;
+        background: #2b2b2b;
+        color: #fff;
+        img {
+          width:100%;
+          height:100%;
+          border: 0px;
+          outline-width: 0px;
+          vertical-align: top;
+        }
+
+   .info {
+          text-align: center;
+          line-height: 22px;
+          padding: 10px 0 12px 14px;
+          text-align: left;
+          p {
+            color: #7a7a7a;
+            font-size: 10px;
+        }
+      }
+     
+    }
+    .active{
+      transition: all 0.3s ease-in;
+    }
+    .active:hover .info{
+      background:#cba449;
+      transition: all 1s ease-out;
+    }
+    }
+  }
+}
+}
+}

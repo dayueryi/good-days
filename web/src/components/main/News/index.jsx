@@ -51,7 +51,6 @@ class News extends Component {
      
   }
   componentDidMount(){
-    
     myajax.fetch({
         url:"http://localhost:4000/api/news",
         option:{},

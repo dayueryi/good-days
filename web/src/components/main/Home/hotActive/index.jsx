@@ -5,6 +5,9 @@ import banner01 from '@/img/banner01.jpg';
 import banner02 from '@/img/banner02.jpg';
 import banner03 from '@/img/banner03.jpg';
 import banner04 from '@/img/banner04.jpg';
+import myajax from '@/tool/myajax.js';
+import store from '@/store/index.js';
+import HotActiveCon from './hotActiveCon/index.jsx'
 class Home extends Component {
     state = {}
     render() { 
@@ -30,8 +33,24 @@ class Home extends Component {
                                     <a href="javascript:;" className="prev"></a>
                                     <div className="bd" id="hei">
                                        <div className="tempWrap">
-                                            <ul className="clearfix">
-                                                <li>
+                                       <HotActiveCon />
+                                            {/* <ul className="clearfix">
+                                            {
+                                            store.getState().active.map((item,index)=>{
+                                                 <li key={item.activeID}>
+                                                    <a href="" className="active">
+                                                        <div className="img">        
+                                                                <img src={item.activeAddress} alt={item.activetxt2}/>
+                                                        </div>
+                                                        <div className="info">
+                                                            <p>POST TIME:{item.activeTime}</p>
+                                                            <span>{item.activetxt2}</span>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            })
+                                             }   */}
+                                                {/* <li>
                                                     <a href="" className="active">
                                                         <div className="img">        
                                                                 <img src="http://img.vc520.com/uploads/201803/3-1P32G64Z70-L.jpg" alt="三月第四周客照"/>
@@ -52,19 +71,8 @@ class Home extends Component {
                                                             <span>三月第四周客照</span>
                                                         </div>
                                                     </a>
-                                                </li>
-                                                <li>
-                                                    <a href="" className="active">
-                                                        <div className="img">        
-                                                                <img src="http://img.vc520.com/uploads/201803/3-1P32G64Z70-L.jpg" alt="三月第四周客照"/>
-                                                        </div>
-                                                        <div className="info">
-                                                            <p>POST TIME:2018-03-27</p>
-                                                            <span>三月第四周客照</span>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                            </ul>
+                                                </li> 
+                                            </ul>*/}
                                        </div> 
                                     </div>
                                     <a href="javascript:;" className="next"></a>
@@ -77,7 +85,19 @@ class Home extends Component {
          )
     }
     componentDidMount(){
-        var Swiper = window.Swiper;
+        myajax.fetch({
+            url:'http://localhost:4000/api/active',
+            options:{},
+            success:((data)=>{
+             store.dispatch({
+                type:"activeList",
+                data:data
+              })
+              console.log(store.getState().active,"==== ===== active  ====");
+            })
+        }
+         
+        ) 
     }
 }
  

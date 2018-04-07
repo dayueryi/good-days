@@ -40,11 +40,14 @@ class Home extends Component {
             <li >
                   <NavLink to="/home" activeClassName="active">
                     <span>首页</span>
+                    {/* <span>Home</span> */}
                   </NavLink>
                 </li>
                 <li>
                 <NavLink to="/show" activeClassName="active">
+                
                   <span>最美客照</span>
+                  {/* <span>Show</span> */}
                   </NavLink>
                 </li>
                 <li className="ul_li">
@@ -66,29 +69,35 @@ class Home extends Component {
                       </Link>
                     </li>
                   </ul>
+                  
+                  {/* <span>Subject</span> */}
+                  
+                 
                 </li>
                 <li>
-                    <NavLink to="/active" activeClassName="active">
-                      <span>最新活动</span>
-                    </NavLink>
+                <NavLink to="/active" activeClassName="active">
+                  <span>最新活动</span>
+                  {/* <span>Active</span> */}
+                  </NavLink>
                 </li>  
                 <li>
-                    <NavLink to="/servicePrice" activeClassName="active">
-                      <span>服务报价</span>
-                    </NavLink>
+                <NavLink to="/news/1" activeClassName="active">
+                <span> 新闻中心</span>
+               {/* <span>News</span> */}
+                  </NavLink>
                 </li> 
                 <li>
-                
-                    <NavLink to="/news/1" activeClassName="active">
-                    <span> 新闻中心</span>
-                    </NavLink>
-                </li> 
-                <li>
-                    <NavLink to="/forum" activeClassName="active">
-                    <span>粉丝论坛</span>
-                    </NavLink>
+                <NavLink to="/forum" activeClassName="active">
+                <span>粉丝论坛</span>
+                {/* <span>Forum</span> */}
+                  </NavLink>
                 </li>
-                
+                <li>
+                <NavLink to="/appointment" activeClassName="active">
+                  <span>在线预约</span>
+                  {/* <span>Appointment</span> */}
+                </NavLink>
+                </li> 
             </ul>
             </div>
         
