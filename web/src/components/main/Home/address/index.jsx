@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Carousel } from 'antd';
 import Swiper from 'swiper';
-import Jquery from 'jquery';
+import $ from 'jquery';
 import './index.scss';
 import banner01 from '@/img/banner01.jpg';
 import banner02 from '@/img/banner02.jpg';
@@ -40,24 +40,24 @@ class Home extends Component {
     componentDidMount(){
         
         if(window.screen.width>=1200){
-            Jquery(".a1").css({width:"760px"}).siblings().css({width:"84px"});
-            Jquery(".jd_nr a").mouseenter(function(){
-                if(Jquery(this).width()==760){
+            $(".a1").css({width:"760px"}).siblings().css({width:"84px"});
+            $(".jd_nr a").mouseenter(function(){
+                if($(this).width()==760){
 
-                }else{
-                    Jquery(this).stop(true).animate({width:"760px"},500).siblings().stop(true).animate({width:"84px"},500);
+            }else{
+                $(this).stop(true).animate({width:"760px"},500).siblings().stop(true).animate({width:"84px"},500);
 
-                }
+            }
         });   
         
         }
         if(window.screen.width<1200){
-            Jquery(".a1").css({width:"624px"}).siblings().css({width:"69px"});
-            if(Jquery(this).width()==624){
+            $(".a1").css({width:"624px"}).siblings().css({width:"69px"});
+            if($(this).width()==624){
 
             }else{
-            Jquery(".jd_nr a").mouseenter(function(){
-                Jquery(this).stop(true).animate({width:"624px"},500).siblings().stop(true).animate({width:"69px"},500);
+                $(".jd_nr a").mouseenter(function(){
+                    $(this).stop(true).animate({width:"624px"},500).siblings().stop(true).animate({width:"69px"},500);
         });  
      }
         }

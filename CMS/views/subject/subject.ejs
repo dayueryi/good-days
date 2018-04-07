@@ -41,7 +41,7 @@
         <div class="box-body">
           <table class="table table-bordered">
               <!-- 类型id、主题名称、套系类型(风格)、婚纱id、拍摄场地、礼服、价格、
-              图片 -->
+              图片Src、图片 -->
             <tr>
              
               <th>主题ID</th>
@@ -51,20 +51,21 @@
               <th>拍摄场地</th>
               <th>礼服</th>
               <th>价格</th>
+              <th>图片Src</th>
               <th>图片</th>
               <th>操作</th>
             </tr>
-
             <% for(var i=0;i<result.length;i++){ %>
               <tr>
-                <td><%= result[i].subjectID %></td>
-                <td><%= result[i].subjectName %></td>
-                <td><%= result[i].subjectKind %></td>
-                <td><%= result[i].subjectStyle %></td>
-                <td><%= result[i].subjectAddress %></td>
-                <td><%= result[i].subjectFormal %></td>
-                <td><%= result[i].subjectPrice %></td>
-                <td><img src="<%= result[i].subjectImg %>" alt=""></td>
+                <td style="width:60px;height:80px;"><%= result[i].subjectID %></td>
+                <td style="width:120px;height:80px;"><%= result[i].subjectName %></td>
+                <td style="width:60px;height:80px;"><%= result[i].subjectKind %></td>
+                <td style="width:120px;height:80px;"><%= result[i].subjectStyle %></td>
+                <td style="width:80px;height:80px;"><%= result[i].subjectAddress %></td>
+                <td style="width:60px;height:80px;"><%= result[i].subjectFormal %></td>
+                <td style="width:60px;height:80px;"><%= result[i].subjectPrice %></td>
+                <td  style="width:80px;height:80px;"><%= result[i].subjectImgSrc %></td>
+                <td style="width:100px;height:80px;"><img src="<%= result[i].subjectImg  %>" style="width:100%;"  alt=""></td>
                 <td>
                   <button class="btn btn-xs btn-warning" onclick="toUpdateSubject('<%= result[i].subjectID %>')">
                     <span class="glyphicon glyphicon-edit"></span>

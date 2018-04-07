@@ -17,11 +17,18 @@ const { Header, Footer, Sider, Content ,Menu,Breadcrumb} = Layout;
 
 // import './index.scss';
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      flag:true
+    }
+  }
   render() {
     return (
       <div className="App">
       <header>
-          <Headerlist/>
+
+          <Headerlist flag={this.state.flag}/>
       </header>
       <div className="container">
            <Switch>
@@ -40,6 +47,19 @@ class App extends Component {
        
       </div>
     );
+  }
+  componentDidMount(){
+  
+    console.log(this.props.location.pathname)
+    if(this.props.location.pathname=="/subject"){
+          this.setState({
+            flag : false
+          })
+    }else{
+      this.setState({
+        flag : true
+      })
+    }
   }
 }
 

@@ -1,11 +1,10 @@
-const todolist =  (state = [],action)=>{
+const subject =  (state = [],action)=>{
     const { type,data } = action
     switch (type) {
-        case "addList":
-        return [...state,data]
-            break;
+     
         case "subjectList":
-        return [...state,data]
+       
+        return data
             break;
         default:
         return state
@@ -14,4 +13,4 @@ const todolist =  (state = [],action)=>{
     
 }
 
-export default todolist
+export default subject

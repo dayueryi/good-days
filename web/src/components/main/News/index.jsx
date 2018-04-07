@@ -69,7 +69,7 @@ class News extends Component {
   render() {
     return (
       <div className="box">
-        <div className="x-content">
+        <div className="x-content bg_center">
           <div className="w_news">
             <h1 className="news_banner">
               <img src={banner} alt="" />
