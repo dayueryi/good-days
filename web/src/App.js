@@ -7,10 +7,13 @@ import Subject from './components/main/Subject/index.jsx';
 import Home from "./components/main/Home/index.jsx";
 import Headerlist from "./components/main/Header/index.jsx";
 import Newslist from "./components/main/News/index.jsx";
+import NewsDetail from "./components/main/News/NewsDetail/index.jsx";
 import Forumlist from "./components/main/Forum/index.jsx";
 import ServicePrice from "./components/main/ServicePrice/index.jsx";
 import ActiveDetail from './components/main/Active/ActiveDetail/index.jsx';
 import SubjectDetail from './components/main/Subject/SubjectDetail/index.jsx';
+
+
 import store from '@/store/index.js';
 // import ShowDetail from './components/main/Show/ShowDetail/index.jsx';
 import './App.css';
@@ -62,9 +65,12 @@ searchDataHandler(){
               <Route path="/active" component={Active}/>
               <Route path="/show" component={Show}/>
               <Route path="/subject" component={Subject}/>
-             
               <Route path="/news/:pageID" component={Newslist}/>
               <Route path="/news" component={Newslist}/>
+<<<<<<< HEAD
+=======
+              <Route path="/newsdetail/:newsID" component={NewsDetail}/>
+>>>>>>> 0fc10d1cd94999a66ee7caf252b4db60d3d4b74d
               <Route path="/forum" component={Forumlist}/>
               <Route path="/servicePrice/:serviceType" component={ServicePrice}/>
               <Route path="/servicePrice" component={ServicePrice}/>
