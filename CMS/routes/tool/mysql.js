@@ -1,5 +1,5 @@
 var MongoClient = require('mongodb').MongoClient;
-var mongo_url = 'mongodb://localhost:27017/goodday';
+var mongo_url = 'mongodb://10.8.162.35:27017/goodday';
 //定义模块
 var mysql = {
     connect(cb){

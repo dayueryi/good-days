@@ -23,11 +23,11 @@ class Main extends Component {
           <dl key={element.newsID}>
             <dt>
               <Link to={"/newsDetail/"+element.newsID}>
-                <img src={element.imgs[0].Images} />
+                <img src={element.newsTopImg} />
               </Link>
             </dt>
             <dd>
-              <h3>{element.newsID}</h3>
+              <h3>{element.newsTime}</h3>
               <h5>TOPPIC WEDDING PHOTOGRAPHY</h5>
               <h4>{element.newsName}</h4>
               <p>{element.newsContent}</p>

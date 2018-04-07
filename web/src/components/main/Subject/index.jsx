@@ -77,18 +77,9 @@ class Subject extends Component {
         })
 	
 })
-<<<<<<< HEAD
-   /*  myajax.fetch({
-        url:'http://localhost:4000/subject/api?subjectKind'+subjectKind,
-        options:{
-          // options:{
-          // }
-        },
-=======
     myajax.fetch({
         url:'http://localhost:4000/subject/api',
         options:{},
->>>>>>> ef87558a3a982c987bfa3c250d5aab24abf69150
         success:((data)=>{
          store.dispatch({
             type:"subjectList",
@@ -99,12 +90,7 @@ class Subject extends Component {
         })
     }
      
-<<<<<<< HEAD
-    )  */
-
-=======
     ) 
->>>>>>> ef87558a3a982c987bfa3c250d5aab24abf69150
   }
 }
 

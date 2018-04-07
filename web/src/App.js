@@ -7,10 +7,13 @@ import Subject from './components/main/Subject/index.jsx';
 import Home from "./components/main/Home/index.jsx";
 import Headerlist from "./components/main/Header/index.jsx";
 import Newslist from "./components/main/News/index.jsx";
+import NewsDetail from "./components/main/News/NewsDetail/index.jsx";
 import Forumlist from "./components/main/Forum/index.jsx";
 import ServicePrice from "./components/main/ServicePrice/index.jsx";
 import ActiveDetail from './components/main/Active/ActiveDetail/index.jsx';
 import SubjectDetail from './components/main/Subject/SubjectDetail/index.jsx';
+
+
 import store from '@/store/index.js';
 // import ShowDetail from './components/main/Show/ShowDetail/index.jsx';
 import './App.css';
@@ -61,17 +64,11 @@ searchDataHandler(){
               <Route path="/activedetail" component={ActiveDetail}/>
               <Route path="/show" component={Show}/>
               <Route path="/subject" component={Subject}/>
-             
               <Route path="/news/:pageID" component={Newslist}/>
-<<<<<<< HEAD
-              <Route path="/news/" component={Newslist}/>
-              <Route path="/forum" component={Forumlist}/>
-              <Route path="/appointment" component={Appointmentlist}/>
-=======
-              
+              <Route path="/news" component={Newslist}/>
+              <Route path="/newsdetail/:newsID" component={NewsDetail}/>
               <Route path="/forum" component={Forumlist}/>
               <Route path="/servicePrice" component={ServicePrice}/>
->>>>>>> ef87558a3a982c987bfa3c250d5aab24abf69150
               
           </Switch>
       </div>

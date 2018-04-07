@@ -79,7 +79,7 @@ class Home extends Component {
                 </li> 
                 <li>
                 
-                    <NavLink to="/news/1" activeClassName="active">
+                    <NavLink to="/news" activeClassName="active">
                     <span> 新闻中心</span>
                     </NavLink>
                 </li> 
@@ -112,14 +112,10 @@ class Home extends Component {
           $(".small_ul").slideUp("slow");
         })
 
-<<<<<<< HEAD
-      
-=======
       //   Jquery(".ul_li").mouseleave(function(){
       //     Jquery(".small_ul").slideUp("slow");
       // })
 
->>>>>>> ef87558a3a982c987bfa3c250d5aab24abf69150
        
     }
 }
