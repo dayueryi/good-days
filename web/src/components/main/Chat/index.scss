@@ -1,4 +1,4 @@
-
+@import "~@/lib/reset.scss";
 .chat{
     width:800px;
     height:488px;
@@ -8,12 +8,125 @@
     left: 50%;
     margin-left: -400px;
     margin-top: -244px
+}
     header{
         width: 100%;
         height: 54px;
-        padding-top:6px;
-        padding-left: 20px; 
-    
-    }
+        padding-top:1px;
+        padding-left: 20px;
+        background: #aaaad8;
+        .logo{
+            width: 50px;
+            height: 50px;
+            display: block;
+            border-radius: 50%;
+            background: rgba(28, 113, 158, 0.5);
+            color:#ddd;
+            margin: 0;
+            text-align: center;
+            margin-right: 10px
+        }
+        .p1,.p2{
+            display: block;
+            line-height: 24px;
+           
+            color: #efefef;;
 
-}
+        }
+        .p1{
+            padding-top: 3px;
+            font-size: 18px
+        }
+        .p2{
+            font-size: 13px
+        }
+        }
+        .container1{
+            height: 434px;
+        }
+     
+
+        * {
+            box-sizing: border-box;
+          }
+          
+          body,
+          html {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+           background: rgba(170, 170, 216,0.3)
+          }
+          
+          #app {
+            height: 100%;
+          }
+          
+          .content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background:rgba(64, 158, 255, 0.1)
+          }
+          
+          .msg-list {
+            padding: 10px;
+            flex: 1 1 auto;
+            overflow: auto;
+          }
+          
+          .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+          
+          .input {
+            border: none;
+            outline: none;
+            font-size: 12px !important;
+            color:#EEE;
+            flex: 1;
+            height: 35px;
+            font-size: 18px;
+            background:#aaaad8
+          }
+          
+          
+          .button {
+            margin-left: 10px;
+            padding: 5px;
+            background: lightblue;
+            color:rgb(35, 0, 142);
+          }
+          
+          .message {
+            background-color: lightblue;
+            padding: 15px;
+            border-radius: 3px;
+            align-self: flex-end;
+            max-width: 80%;
+          }
+          
+          .response {
+            background-color: lightblue;
+            padding: 15px;
+            border-radius: 3px;
+            align-self: flex-start;
+            margin: 2px;
+            max-width: 80%;
+          }
+          
+          .fixedBottom {
+            border-top: 1px solid gray;
+            align-items: center;
+            display: flex;
+            width: 100%;
+            flex: 0 0 auto;
+            padding: 10px;
+            background:rgb(170, 170, 216)
+          }
+          .fixedBottom:hover{
+            background:rgba(170, 170, 216,0.8)
+          }

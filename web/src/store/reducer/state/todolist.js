@@ -16,6 +16,9 @@ const todolist =  (state = [],action)=>{
         case "templateList":
             return [...state,data]
             break;
+        case "showDetail":
+            return [...state,data]
+            break;
         case "servicePriceList":
             return [...state,data]
             break;

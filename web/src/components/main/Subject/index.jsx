@@ -77,6 +77,7 @@ class Subject extends Component {
         })
 	
 })
+console.log(this)
     myajax.fetch({
         url:'http://localhost:4000/subject/api',
         options:{},

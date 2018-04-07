@@ -19,13 +19,15 @@ class Subject extends Component {
                   arrs.push(
                    
                     <li key={element.subjectID}>
+                     <Link className="awidth" to={"/subject/subjectDetail/"+element.subjectID}>
                     <div className="bg"></div>
-                    <img src={element.subjectImgSrc} alt="致礼物般的你" />
+                    <img src={element.subjectImgSrc} alt={element.subjectName} />
                       <h3>{element.subjectName} <span>￥{element.subjectPrice}</span></h3>
                     <div className="span">
                       <span className="s1">{element.subjectName}</span>
                       <span className="s2">{element.subjectAddress}</span>
                     </div>
+                    </Link>
                   </li>
                   
                   )
