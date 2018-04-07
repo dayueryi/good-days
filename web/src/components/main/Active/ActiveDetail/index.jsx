@@ -26,6 +26,7 @@ class ActiveDetail extends Component{
             <div className = "box">
                 <div className="x-content">
                 <div className="banner">
+                
                      { 
                          this.state.imglist.map((item, index) => {
                           return(

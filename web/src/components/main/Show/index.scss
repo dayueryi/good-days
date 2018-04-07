@@ -35,6 +35,7 @@
                 p{
                     margin: 0;
                     padding: 0;
+                    border-image-repeat: unset;
                 }
                 p:nth-of-type(1){
                     font-size: 22px;

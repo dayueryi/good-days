@@ -66,11 +66,17 @@ searchDataHandler(){
               <Route path="/show" component={Show}/>
               <Route path="/subject" component={Subject}/>
               <Route path="/news/:pageID" component={Newslist}/>
+
+              <Route path="/forum" component={Forumlist}/>
+              {/* <Route path="/appointment" component={Appointmentlist}/> */}
+              <Route path="/activedetail" component={ActiveDetail}/>
+
               <Route path="/news" component={Newslist}/>
               <Route path="/newsdetail/:newsID" component={NewsDetail}/>
               <Route path="/forum" component={Forumlist}/>
               <Route path="/servicePrice/:serviceType" component={ServicePrice}/>
               <Route path="/servicePrice" component={ServicePrice}/>
+
               
           </Switch>
       </div>

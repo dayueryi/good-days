@@ -22,7 +22,7 @@ class Home extends Component {
         this.setState({
             bannerlist: data[0]
           },()=>{
-              console.log(data[0])
+               
           })
      })
      
