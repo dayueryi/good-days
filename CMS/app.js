@@ -13,6 +13,7 @@ var news = require('./routes/news');
 var address = require('./routes/address');
 
 var subject = require('./views/subject/subject.js');
+var servicePrice = require('./views/servicePrice/servicePrice.js');
 var detail = require('./views/detail/detail.js');
 // var detail = require('./routes/detail');
 
@@ -52,6 +53,7 @@ app.use('/product', product);
 app.use('/news', news);
 app.use('/address', address);
 app.use('/subject', subject);
+app.use('/servicePrice', servicePrice);
 app.use('/detail', detail);
 //供前端调用的接口
 app.use('/api', indexapi);

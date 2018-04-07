@@ -9,10 +9,12 @@ class Main extends Component {
       list: []
     };
   }
-  componentDidMount() {}
+  componentDidMount() {
+    // console.log(store.getState().news);
+  }
   componentWillReceiveProps() {}
   render() {
-    // console.log("props",this.props.newsList)
+    console.log("props",this.props.newsList)
     if( store.getState().news){
       var arr = [];
 

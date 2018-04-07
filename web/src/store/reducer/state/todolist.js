@@ -4,7 +4,21 @@ const todolist =  (state = [],action)=>{
         case "addList":
         return [...state,data]
             break;
-    
+        case "subjectList":
+        return [...state,data]
+            break;
+        case "subjectDetail":
+        return [...state,data]
+                break;
+        case "activeList":
+        return [...state,data]
+            break;
+        case "templateList":
+            return [...state,data]
+            break;
+        // case "templateList":
+        //     return [...state,data]
+        //     break;
         default:
         return state
             break;

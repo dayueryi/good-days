@@ -9,7 +9,20 @@ const { Header, Content, Footer } = Layout;
 class Home extends Component {
     state = {}
     render() { 
-       
+      var str = (<NavLink to="/subject" activeClassName="active">
+                      <span>
+                        主题类型
+                      </span>
+                  </NavLink>);
+       if(this.props.flag==false){
+        str = (<NavLink to="" activeClassName="active">
+                <span>
+                  主题类型
+                </span>
+              </NavLink>
+              )
+      }
+      
      return  (
         <div className = "x-container">
         <div className="x-header">
@@ -17,70 +30,65 @@ class Home extends Component {
                 <img src={logo} alt="111"/>
             </div>
             <div className="search">
+                {/* <input type="text" onChange={props.getVal}/>
+                <span onClick={props.onClick}>搜索</span> */}
                 <input type="text"/>
-                <span>搜索</span>
+                <span >搜索</span>
             </div>
             
             <ul className="x-ul">
             <li >
                   <NavLink to="/home" activeClassName="active">
                     <span>首页</span>
-                    {/* <span>Home</span> */}
                   </NavLink>
                 </li>
                 <li>
                 <NavLink to="/show" activeClassName="active">
-                
                   <span>最美客照</span>
-                  {/* <span>Show</span> */}
                   </NavLink>
                 </li>
                 <li className="ul_li">
-                <NavLink to="/subject" activeClassName="active">
-                
+                {/* <NavLink to="/subject" activeClassName="active">
                   <span>
                     主题类型
+                  </span>
+                </NavLink> */}
+                {str}
                     <ul className="small_ul">
                     <li>
-                      <Link to="/subjec?subjectKind=0">
+                      <Link to="/subject/subjectKind=0">
                           内景
                       </Link>
                     </li>
                     <li>
-                      <Link to="/subject?subjectKind=1">
+                      <Link to="/subject/subjectKind=1">
                           外景
                       </Link>
                     </li>
                   </ul>
-                  </span>
-                  {/* <span>Subject</span> */}
-                  
-                  </NavLink>
                 </li>
                 <li>
-                <NavLink to="/active" activeClassName="active">
-                  <span>最新活动</span>
-                  {/* <span>Active</span> */}
-                  </NavLink>
+                    <NavLink to="/active" activeClassName="active">
+                      <span>最新活动</span>
+                    </NavLink>
                 </li>  
                 <li>
-                <NavLink to="/news" activeClassName="active">
-                <span> 新闻中心</span>
-               {/* <span>News</span> */}
-                  </NavLink>
+                    <NavLink to="/servicePrice" activeClassName="active">
+                      <span>服务报价</span>
+                    </NavLink>
                 </li> 
                 <li>
-                <NavLink to="/forum" activeClassName="active">
-                <span>粉丝论坛</span>
-                {/* <span>Forum</span> */}
-                  </NavLink>
+                
+                    <NavLink to="/news/1" activeClassName="active">
+                    <span> 新闻中心</span>
+                    </NavLink>
+                </li> 
+                <li>
+                    <NavLink to="/forum" activeClassName="active">
+                    <span>粉丝论坛</span>
+                    </NavLink>
                 </li>
-                <li>
-                <NavLink to="/appointment" activeClassName="active">
-                  <span>在线预约</span>
-                  {/* <span>Appointment</span> */}
-                </NavLink>
-                </li> 
+                
             </ul>
             </div>
         
@@ -94,6 +102,9 @@ class Home extends Component {
             Jquery(".small_ul").slideToggle("slow");
         }) */
         
+        
+
+
         $(".ul_li").click(function(){
           $(".small_ul").slideToggle("slow");
         })
@@ -101,7 +112,14 @@ class Home extends Component {
           $(".small_ul").slideUp("slow");
         })
 
+<<<<<<< HEAD
       
+=======
+      //   Jquery(".ul_li").mouseleave(function(){
+      //     Jquery(".small_ul").slideUp("slow");
+      // })
+
+>>>>>>> ef87558a3a982c987bfa3c250d5aab24abf69150
        
     }
 }

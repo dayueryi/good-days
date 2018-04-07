@@ -78,5 +78,20 @@ router.get('/activebanner',function(req,res,next){
     })
 })
 
-
+router.get('/subjectdetail', function(req, res, next) {
+    var subjectID = url.parse(req.url,true).query.subjectID;
+    
+    mysql.connect((db)=>{
+        var queryObj = {
+            subjectID:subjectID
+        };
+        console.log(queryObj,"------------")
+        var showObj = {};
+        mysql.find(db,'subjectdetail',queryObj,showObj,(result)=>{
+           res.send(result);
+            // res.render('updateAddress',obj);
+            db.close();
+        })
+    })
+});
 module.exports = router;
