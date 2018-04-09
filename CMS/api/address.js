@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mysql = require('./tool/mysql');
 var url = require('url');
+var async = require('async');
 var ObjectId = require('mongodb').ObjectId;
 
 /* GET users listing. */
@@ -153,36 +154,66 @@ router.get('/deleteAddress', function(req, res, next) {
     })
 }); */
 
-router.get('/searchApi', function(req, res, next) {
-    var subjectKind = url.parse(url.req,true).query.subjectKind;
-    var subjectAddress = url.parse(url.req,true).query.subjectAddress;
-    if(subjectKind){
-        var queryObj = {
-            subjectKind:subjectKind
-        }
-    }else if(subjectAddress){
-        var queryObj = {
-            subjectAddress:subjectAddress
-        };
-    }else{
-        var queryObj = {};
-    }
-        mysql.connect(function(db){
-            // var queryObj = {};
-            var showObj = {_id:0};
-        mysql.find(db, 'samllnav', queryObj, showObj, function(result) {
-                var obj = {
-                    title: "听风少年-用户",
-                    activeIndex: 0,
-                    tip: '',
-                    result: result,
-                }
-                res.send(result);
-                db.close();
-            })
+
+
+   
+
+router.get('/searchapi', function(req, res, next) {
+    console.log("接口")
+    var type = url.parse(req.url, true).query.type;
+        // var subjectKind = url.parse(req.url, true).query.subjectKind;
+        // var subjectKindName = url.parse(req.url, true).query.subjectKindName;
+        // var subjectStyle = url.parse(req.url, true).query.subjectStyle;
+        // var subjectAddress = url.parse(req.url, true).query.subjectAddress;
+      
+    mysql.connect((db)=>{
+        var option=[
+            function(cb){
+                mysql.find(db,"search",{subjectKindName:type},{_id:0},(result)=>{
+                    cb(null,result)
+                })
+            },
+            function(cb){
+                mysql.find(db,"search",{subjectStyle:type},{_id:0},(result)=>{
+                    cb(null,result)
+                })
+            },
+            function(cb){
+                mysql.find(db,"search",{subjectAddress:type},{_id:0},(result)=>{
+                    cb(null,result)
+                   
+                })
+            }
+        ];
+        async.parallel(option,(err,result)=>{
+            db.close()
+            var arr = [...result[0],...result[1],...result[2]]
+          //  console.log(arr,"肯定bug")
+            res.send(arr)
         })
-    });
+        //  if(subjectKindName){
+        //         var queryObj = {
+        //             subjectKindName:subjectKindName
+        //         }
+        //     }else if(subjectStyle){
+        //         var queryObj = {
+        //             subjectStyle:subjectStyle
+        //         }
+        //     }else if(subjectAddress){
+        //         var queryObj = {
+        //             subjectAddress:subjectAddress
+        //         }
+        //     }else{
+        //         var queryObj = {};
+        //     }
 
-
+        // console.log(queryObj,"------------")
+        // var showObj = {};
+        // mysql.find(db,'search',queryObj,showObj,(result)=>{
+        //    res.send(result);    
+        //     db.close();
+        // })
+    })
+});
 
 module.exports = router;

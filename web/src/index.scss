@@ -1,13 +1,9 @@
 @import "./lib/reset.scss";
-// body {
-//   margin: 0;
-//   padding: 0;
-//   font-family: sans-serif;
-//   background: red;
-// }
-
 body,html,.App,#root{
   @include rect(100%,100%);
+}
+a{
+  text-decoration: none !important;
 }
 .App{
   @include flexbox();
@@ -15,6 +11,16 @@ body,html,.App,#root{
   header{
     @include rect(100%,64px);
     @include background-color(#181818);
+    padding-left:0 !important;
+    .x-container{
+      @include rect(100%,64px);
+      .x-header{
+        @include rect(98%,64px);
+        margin:0 auto;
+        
+        // @include background-color(pink);
+      }
+    }
       .x-ul{
         @include rect(auto,100%);
       

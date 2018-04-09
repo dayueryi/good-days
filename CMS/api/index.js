@@ -169,11 +169,8 @@ router.get('/smallnav', function(req, res, next) {
 
 
 router.get('/showdetail', function(req, res, next) {
-    // var addressID = url.parse(req.url,true).query.classID;
     mysql.connect(function(db){
-        // var queryObj = {addressID:addressID};
         var queryObj = {};
-        
         var showObj = {_id:0};
         mysql.find(db, 'showdetail', queryObj, showObj, function(resultAll) {
                 res.send(resultAll);

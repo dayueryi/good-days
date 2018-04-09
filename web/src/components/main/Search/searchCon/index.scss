@@ -1,0 +1,162 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  border: 0;
+}
+.home{
+  background: #eee;
+}
+body{
+  background: #eee;
+}
+.center{
+  width:1212px;
+  margin: 40px auto;
+  height:auto;
+  .sieries{
+      width:1200px;
+      height: 774px;
+      ul{
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          
+          li{
+              margin-bottom: 10px;
+              position: relative;
+
+              .box{
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height:295px;
+                  opacity: 0.5;
+                  background: #000;
+                  transition:all 0.5s;
+              }
+              img{
+                  width: 620px;
+                  height: 295px;
+              }
+              p{
+                  margin: 0;
+                  padding: 0;
+              }
+              p:nth-of-type(1){
+                  font-size: 22px;
+                  color: #333;
+                  line-height: 40px;
+                  font-weight: 500;
+              }
+          }
+          li:hover .box{
+              display: none;
+              
+          }
+          li:hover p{
+              color:#fd3434;
+              
+          }
+      }
+  }
+.renamelist{
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-around;
+  min-height: 545px !important;
+  // background: #fff;
+  width:100%;
+
+  li{
+      width: 24%;
+      height: 500px;
+      position:relative;
+      margin-left: 10px;
+     margin-bottom: 40px;
+     float: left;
+      img{
+          width: 100%;
+          height: 450px;
+      }
+      .box{
+          position: absolute;
+          width: 290px;
+          height: 0;
+          top:0;
+          opacity: 0.6;
+          color:red;
+          background: black;
+          transition:all 0.5s;
+      }
+      a{
+        .wenzi{
+    p:nth-of-type(1){
+      margin: 0;
+      padding: 10px 0 0;
+      font-size: 22px;
+      font-weight:bold;
+      color: #323232;
+    }
+
+    p:nth-of-type(2),p:nth-of-type(3){
+      margin: 0;
+      padding: 0;
+      border: 0;
+      outline: 0;
+      font-style: normal;
+      color: #323232;
+  }
+ 
+}
+}
+ 
+ 
+}
+li:hover .box{
+  height: 500px;
+  background:url(http://www.lyy99.com/Publicxin/yuanye/img/xj.png) no-repeat;
+  }
+  li:hover a .wenzi p{
+      color:#fd3434;
+  }
+}
+}
+.renamelist{
+    min-height: 545px !important;
+  // margin:0 30px;
+}
+.major-item{
+
+  // margin-left:8px;
+  // margin-right:-35px;
+}
+.wenzi{
+//   width:;
+  padding-left:10px;
+
+//   box-sizing: border-box;
+  background: #fff;
+  padding-bottom:10px;
+  p{
+      b{
+          display: inline-block
+      }
+      b:nth-of-type(2){
+        margin-right:10px;
+      }
+  }
+}
+.cxt{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    
+}
+a{
+    text-decoration: none !important;
+}
+
+

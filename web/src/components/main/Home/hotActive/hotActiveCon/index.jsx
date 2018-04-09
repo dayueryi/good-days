@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import { Carousel } from 'antd';
+// import { Carousel } from 'antd';
 import './index.scss';
-import banner01 from '@/img/banner01.jpg';
-import banner02 from '@/img/banner02.jpg';
-import banner03 from '@/img/banner03.jpg';
-import banner04 from '@/img/banner04.jpg';
-import myajax from '@/tool/myajax.js';
+import {Link} from 'react-router-dom';
+// import myajax from '@/tool/myajax.js';
 import store from '@/store/index.js';
 class Home extends Component {
     state = {}
@@ -16,10 +13,10 @@ class Home extends Component {
            
               if(store.getState().active){
                     var arr=[];
-                    store.getState().active.map((item,index)=>{
+                    store.getState().active.forEach((item,index)=>{
                         arr.push(
                         <li key={item.activeID+1}>
-                           <a href="" className="active">
+                           <Link to="/active" className="active">
                                <div className="img">        
                                        <img src={item.activeAddress} alt={item.activetxt2}/>
                                </div>
@@ -27,7 +24,7 @@ class Home extends Component {
                                    <p>POST TIME:{item.activeTime}</p>
                                    <span>{item.activetxt2}</span>
                                </div>
-                           </a>
+                           </Link>
                        </li>
                        )
                    })

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { Icon, Button, Menu } from "antd";
+
 import { Link } from "react-router-dom";
 import $ from 'jquery';
 import "./index.scss";
-import myajax from '@/tool/myajax.js';
+
 import store from '@/store/index.js';
-const SubMenu = Menu.SubMenu;
+
 class Subject extends Component {
   state = {
     collapsed: false
@@ -18,6 +18,7 @@ class Subject extends Component {
                   arrs.push(
                    
                     <li key={element.subjectID}>
+                     <Link to="/subject">
                     <div className="bg"></div>
                     <img src={element.subjectImgSrc} alt="致礼物般的你" />
                       <h3>{element.subjectName} <span>￥{element.subjectPrice}</span></h3>
@@ -25,6 +26,7 @@ class Subject extends Component {
                       <span className="s1">{element.subjectName}</span>
                       <span className="s2">{element.subjectAddress}</span>
                     </div>
+                    </Link>
                   </li>
                   
                   )

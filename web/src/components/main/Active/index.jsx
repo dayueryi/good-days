@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Footerlist from './../Footer/index.jsx';
+
 import './index.scss';
 import store from "@/store/index.js"
 import {Link} from 'react-router-dom'
-import ActiveDetail from './ActiveDetail/index.jsx'
+// import ActiveDetail from './ActiveDetail/index.jsx'
 import Active from '@/api/active.js'
 
 class Home extends Component {

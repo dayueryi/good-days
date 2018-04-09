@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-import { Carousel } from "antd";
+
 import "./index.scss";
-import banner01 from "@/img/banner01.jpg";
-import banner02 from "@/img/banner02.jpg";
-import banner03 from "@/img/banner03.jpg";
-import banner04 from "@/img/banner04.jpg";
+
 import HotShowCon from './hotShowCon/index.jsx';
 import myajax from '@/tool/myajax.js';
 import store from '@/store/index.js';
@@ -46,7 +43,7 @@ class Home extends Component {
           type:"templateList",
           data:data
         })
-        console.log(store.getState().template,"==== =====template  ====");
+        // console.log(store.getState().template,"==== =====template  ====");
       })
   }) 
   }

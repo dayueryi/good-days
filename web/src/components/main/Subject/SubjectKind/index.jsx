@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { Icon, Button, Menu } from "antd";
+
 import { Link } from "react-router-dom";
 import $ from 'jquery';
 import "./index.scss";
-// import myajax from '@/tool/myajax.js';
+
 import myajax from '@/tool/myajax.js';
 import store from '@/store/index.js';
-const SubMenu = Menu.SubMenu;
+
 class Subject extends Component {
   state = {
     collapsed: false,

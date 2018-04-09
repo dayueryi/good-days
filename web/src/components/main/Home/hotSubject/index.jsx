@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import { Carousel } from 'antd';
+
 import './index.scss';
 import $ from 'jquery';
-import banner01 from '@/img/banner01.jpg';
-import banner02 from '@/img/banner02.jpg';
-import banner03 from '@/img/banner03.jpg';
-import banner04 from '@/img/banner04.jpg';
+
 import SunjectCon from './SubjectCon/index.jsx';
 // import SunjectCon from './SubjectCon/index.jsx';
 import myajax from '@/tool/myajax.js';
@@ -92,7 +89,7 @@ class Home extends Component {
           data:data
         })
 // console.log("======================");
-        console.log(store.getState().subject,"==== ===== redux  ====");
+        // console.log(store.getState().subject,"==== ===== redux  ====");
       })
   }
    

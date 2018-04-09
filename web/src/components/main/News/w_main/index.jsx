@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
-import news01 from "@/img/news01.jpg";
+import {  Link } from "react-router-dom";
+
 import store from "@/store/index.js";
 class Main extends Component {
   constructor(props) {
@@ -23,7 +23,7 @@ class Main extends Component {
           <dl key={element.newsID}>
             <dt>
               <Link to={"/newsDetail/"+element.newsID}>
-                <img src={element.newsTopImg} />
+                <img src={element.newsTopImg} alt=""/>
               </Link>
             </dt>
             <dd>

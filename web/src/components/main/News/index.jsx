@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+
 import banner from "@/img/xinwen_tit.png";
 import store from "@/store/index.js"
 
-import Footerlist from "./../Footer/index.jsx";
+
 import Footer from './../Footer/index.jsx';
 import Main from "./w_main/index.jsx"
 import Paging from './paging/index.jsx';
@@ -44,7 +44,7 @@ class News extends Component {
   }
   componentWillReceiveProps(nextProps){
     //console.log(nextProps.match.params.pageID)
-    if (nextProps.location.pathname != this.props.location.pathname) {
+    if (nextProps.location.pathname !== this.props.location.pathname) {
       var pageNum = nextProps.match.params.pageID
       this.getNewsLiseDate(pageNum)
      } 

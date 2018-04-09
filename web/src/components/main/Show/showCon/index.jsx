@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Carousel } from "antd";
+
 import "./index.scss";
 import {Link} from 'react-router-dom';
 import store from '@/store/index.js';
@@ -11,11 +11,11 @@ class Home extends Component {
                 store.getState().template.forEach(element => {
                   arrs.push(
                     <li className="major-item" key={element.templateID}>
-                    <Link to={"/show/showDetail/"+element.templateID} target="_blank">
+                    <Link to={"/show/showDetail/"+element.templateID} >
                         <div className="box" ></div>
                         
                           <span className="txt-hide front-face">
-                            <img className="img" src={element.templateLinkSrc} title={element.templateName} />
+                            <img className="img" src={element.templateLinkSrc} title={element.templateName} alt=""/>
                           </span>
                           <span className="back-face to-right" />
                           <div className="wenzi">

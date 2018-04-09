@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Carousel } from "antd";
+
 import Footerlist from "./../Footer/index.jsx";
 import { NavLink } from "react-router-dom";
 import ServicePriceCon from './servicePriceCon/index.jsx';
@@ -15,7 +15,7 @@ class Home extends Component {
           <h1 className="png">婚纱摄影价格</h1>
           <div className="fenlei">
             <span>类别：</span>
-            <NavLink to="/servicePrice/0"  activeClassName="active">特惠套系</NavLink>
+            <NavLink to="/servicePrice/0" activeClassName="active">特惠套系</NavLink>
             <NavLink to="/servicePrice/1" activeClassName="active">VIP套系</NavLink>
             <NavLink to="/servicePrice/2" activeClassName="active">高端定制</NavLink>
             <NavLink to="/servicePrice/3" activeClassName="active">时尚写真</NavLink>
@@ -24,7 +24,6 @@ class Home extends Component {
           <div className="neirong">
          <ServicePriceCon/>
         </div>
-       
             <Footerlist/>
         </div>
       </div>
@@ -50,7 +49,7 @@ class Home extends Component {
      // console.log(nextProps,"--------")
       // console.log(nextProps.location.pathname,"=======nextProps=======");
       // console.log(this.props.location.pathname,"=======Props=======");
-      if (nextProps.location.pathname != this.props.location.pathname) {
+      if (nextProps.location.pathname !== this.props.location.pathname) {
         var  serviceUrl = nextProps.location.pathname.split("/")[2];
         console.log(serviceUrl,"-----------s");
         this.getServicePriceDate(serviceUrl)
@@ -61,6 +60,10 @@ class Home extends Component {
       // console.log(this.props.location.pathname.split("/")[2]);
       this.getServicePriceDate(this.props.location.pathname.split("/")[2]);
       this.getServicePriceDate(0);
+      if(this.props.location.pathname.split("/")[2].length === 0){
+       
+        this.getServicePriceDate(0);
+      }
   
   }
 }

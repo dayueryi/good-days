@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import { Carousel } from 'antd';
-import Swiper from 'swiper';
+// import { Carousel } from 'antd';
+// import Swiper from 'swiper';
 import $ from 'jquery';
 import './index.scss';
-import banner01 from '@/img/banner01.jpg';
-import banner02 from '@/img/banner02.jpg';
-import banner03 from '@/img/banner03.jpg';
-import banner04 from '@/img/banner04.jpg';
+import {Link} from 'react-router-dom';
+
 class Home extends Component {
     state = {
         direction: 'vertical',
@@ -26,17 +24,20 @@ class Home extends Component {
                       <a>拒绝千挑万选 每日客照接单</a>
                       </div>
             <div className="jd_nr">
-                    <a className="a5" href="" target="_blank" >蜈支洲岛主题作品</a>
-                    <a className="a4" href="" target="_blank" >非诚勿扰主题作品</a>
-                    <a className="a3" href="" target="_blank">海棠湾主题作品</a>
-                    <a className="a2" href="" target="_blank" >西岛主题作品</a>
-                    <a className="a1" href="" target="_blank"  >小洞天主题作品</a>
+                    <Link className="a5" to="servicePrice/0" >蜈支洲岛主题作品</Link>
+                    <Link className="a4" to="servicePrice/1">非诚勿扰主题作品</Link>
+                    <Link className="a3" to="servicePrice/2">海棠湾主题作品</Link>
+                    <Link className="a2" to="servicePrice/3">西岛主题作品</Link>
+                    <Link className="a1" to="servicePrice/4">小洞天主题作品</Link>
             </div>
         </div>
            
         
          )
     }
+
+
+
     componentDidMount(){
         
         if(window.screen.width>=1200){

@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mysql = require('./tool/mysql');
 var url = require('url');
-var ObjectId = require('mongodb').ObjectId;
+// var ObjectId = require('mongodb').ObjectId;
 
 /* GET users listing. */
 //跳转用户页面
@@ -133,6 +133,8 @@ router.get('/deleteAddress', function(req, res, next) {
         })
     })
 }); */
+
+
 
 
 module.exports = router;

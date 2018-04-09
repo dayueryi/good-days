@@ -1,22 +1,24 @@
 
-import { Layout, Menu, Breadcrumb } from 'antd';
-import { Route,Switch,Redirect,NavLink ,Link} from 'react-router-dom';
+// import { Layout, Menu, Breadcrumb } from 'antd';
+import {Redirect,NavLink ,Link} from 'react-router-dom';
 import React, { Component } from 'react';
 import './index.scss';
 import logo from '@/img/logo.png';
 import $ from 'jquery';
 import myajax from '@/tool/myajax.js';
 import store from '@/store/index.js';
-const { Header, Content, Footer } = Layout;
+// const { Header, Content, Footer } = Layout;
 class Home extends Component {
-    state = {}
+    state = {
+      val:''
+    }
     render() { 
       var str = (<NavLink to="/subject" activeClassName="active">
                       <span>
                         主题类型
                       </span>
                   </NavLink>);
-       if(this.props.flag==false){
+       if(this.props.flag===false){
         str = (<NavLink to="" activeClassName="active">
                 <span>
                   主题类型
@@ -32,8 +34,8 @@ class Home extends Component {
                 <img src={logo} alt="111"/>
             </div>
             <div className="search">
-                <input type="text" ref="getVal"/>
-                <span onClick={this.searchHandler}>搜索</span>
+                <input type="text" ref="getKeys" />
+                <span onClick={this.searchHandler.bind(this)}><Link to="/search" style={{"textDecoration": "none","color":"#fff"}}>搜索</Link></span>
             </div>
             
             <ul className="x-ul">
@@ -73,7 +75,7 @@ class Home extends Component {
                     </NavLink>
                 </li>  
                 <li>
-                    <NavLink to="/servicePrice" activeClassName="active">
+                    <NavLink to="/servicePrice/0" activeClassName="active">
                       <span>服务报价</span>
                     </NavLink>
                 </li> 
@@ -102,26 +104,31 @@ class Home extends Component {
         $(".ul_li").mouseleave(function(){
           $(".small_ul").slideUp("slow");
         })
-        console.log(this.refs.getVal);
-       
+     
+        // console.log(this.refs.getKeys.value);
     }
-    // getVal(){
-      
-    // }
-    searchHandler(){
-
-        myajax.fetch({
-          // url:'http://localhost:4000/api/searchApi',
-          options:{},
-          success:((data)=>{
-          store.dispatch({
-              type:"searchList",
-              data:data
-            })
-            console.log(store.getState().search,"==== =====  search  ====");
-          })
-      }) 
     
+    getData(type){
+      // console.log(subjectKindName);
+      myajax.fetch({
+        url:"http://localhost:4000/api/address/searchapi?type="+type,
+        options:{},
+        success:((data)=>{
+          console.log("xqqxqq",data)
+        store.dispatch({
+            type:"searchList",
+            data:data
+          })
+          console.log(store.getState().search,"==== =====  search  ====");
+        })
+    })
+    }
+    searchHandler(){
+      var getInput = this.refs.getKeys;
+      var getVal = getInput.value;
+      console.log(getVal);
+      this.getData(getVal);
+     
     }
 }
  
