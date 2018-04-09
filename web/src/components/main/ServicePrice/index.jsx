@@ -30,7 +30,7 @@ class Home extends Component {
     );
   }
   getServicePriceDate=(serviceType)=>{
-    console.log(serviceType,"1111");
+  //  console.log(serviceType,"1111");
     myajax.fetch({
         url:"http://localhost:4000/servicePrice/servicePriceApi?serviceType="+serviceType,
         option:{},
@@ -41,7 +41,7 @@ class Home extends Component {
            data:data,
          })
        
-        console.log(store.getState().servicePrice,"----66666--   redux -------------")
+      //  console.log(store.getState().servicePrice,"----66666--   redux -------------")
       }
        })
     }
@@ -51,7 +51,7 @@ class Home extends Component {
       // console.log(this.props.location.pathname,"=======Props=======");
       if (nextProps.location.pathname !== this.props.location.pathname) {
         var  serviceUrl = nextProps.location.pathname.split("/")[2];
-        console.log(serviceUrl,"-----------s");
+      //  console.log(serviceUrl,"-----------s");
         this.getServicePriceDate(serviceUrl)
        } 
        

@@ -11,6 +11,11 @@ class Subject extends Component {
     collapsed: false,
     subjectKindData:[]
   };
+  addBook(a){
+    console.log(a)
+    console.log(this)
+    window.location.href="/book/"+a
+  }
   render() {
 
     if(store.getState().servicePrice){
@@ -42,12 +47,12 @@ class Subject extends Component {
                             <span className="png"></span>
                             <b >立即咨询套系详情</b>
                           </NavLink>
-                          <NavLink className="d5" to="" activeclass = "active">
+                          <a className="d5" href="javascript:;" onClick={this.addBook.bind(this,item.servicePriceID)}>
                           
                             <span className="png">
                             </span> 
-                            <b>抢订档期</b>
-                          </NavLink>
+                            <b >抢订档期</b>
+                          </a>
                         </div>
                       </div>
                     </li>

@@ -1,0 +1,55 @@
+.w-book{
+    width: 900px;
+    height: 400px;
+    margin: 20px auto 0;
+    overflow: hidden;
+    dl{
+        width: 100%;
+        dt{
+            float: left;
+            width: 600px;
+        }
+        dd{
+            float: left;
+            width: 300px;
+            h2{
+                margin-top: 20px;
+                height: 40px;
+                line-height: 40px;
+                font-size: 26px;
+                text-align: center;
+                color: #e2404d;
+            }
+            p{
+                color: #8a7152;
+                 overflow: hidden;
+                 font-size: 16px;
+                 text-indent: 32px;
+                 padding: 20px 10px;
+                 height: 250px;
+            }
+            div{
+                height: 90px;
+               
+                overflow: hidden;
+                span{
+                    float: left;
+                    width: 50%;
+                    text-align: center;
+                    line-height: 90px;
+                    font-size: 20px;
+                    color: #fff;
+                    box-sizing: border-box;
+                    background: #c8bb9b;
+                    cursor: pointer;
+                    &:nth-of-type(2){
+                        background: #888;
+                    }
+                    &:hover{
+                        background: #e2404d;
+                    }
+                }
+            }
+        }
+    }
+}

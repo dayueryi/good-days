@@ -104,8 +104,13 @@ class Home extends Component {
         $(".ul_li").mouseleave(function(){
           $(".small_ul").slideUp("slow");
         })
+<<<<<<< HEAD
      
         // console.log(this.refs.getKeys.value);
+=======
+       // console.log(this.refs.getVal);
+       
+>>>>>>> 6e5fc5e5d9b235f725a94488ac20b009fa6cb412
     }
     
     getData(type){
