@@ -13,6 +13,7 @@ import Forumlist from "./components/main/Forum/index.jsx";
 import ServicePrice from "./components/main/ServicePrice/index.jsx";
 import ActiveDetail from './components/main/Active/ActiveDetail/index.jsx';
 import SubjectDetail from './components/main/Subject/SubjectDetail/index.jsx';
+import ShowDetail from './components/main/Show/ShowDetail/index.jsx';
 import Search from "./components/main/Search/index.jsx";
 
 import store from '@/store/index.js';
@@ -53,13 +54,10 @@ searchDataHandler(){
       <div className="container">
            <Switch>
               <Route path="/home" component={Home}/>
-<<<<<<< HEAD
               <Route path="/show/showDetail/:templateID" component={ShowDetail}/>
               <Route path="/show" component={Show}/>
-=======
           
               {/* <Route path="/show/showDetail/:templateID" component={ShowDetail}/> */}
->>>>>>> 6e5fc5e5d9b235f725a94488ac20b009fa6cb412
               <Route path="/subject/subjectDetail/:subjectID" component={SubjectDetail}/>
               <Route path="/subject" component={Subject}/>
               <Route path="/activedetail" component={ActiveDetail}/>
@@ -69,13 +67,10 @@ searchDataHandler(){
               <Route path="/newsdetail/:newsID" component={NewsDetail}/>
               <Route path="/servicePrice/:serviceType" component={ServicePrice}/>
               <Route path="/servicePrice" component={ServicePrice}/>
-<<<<<<< HEAD
               <Route path="/forum" component={Forumlist}/>
               <Route path="/search" component={Search}/>
               <Redirect to={{pathname:"/home"}} component={Home}/>
-=======
               <Route path="/book" component={Book}/>
->>>>>>> 6e5fc5e5d9b235f725a94488ac20b009fa6cb412
           </Switch>
       </div>
        
