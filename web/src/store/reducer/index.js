@@ -9,6 +9,7 @@ import servicePrice from './state/servicePrice.js';
 import showDetail from './state/showDetail.js';
 import subjectKindName from './state/subjectKindName.js';
 import search from './state/search.js';
+import login from './state/login.js';
 // combineReducers是用来合并reducer的，因为creatstore只能有一个reducer，
 // 但是一个reducer又只对应一个状态
 const reducer = combineReducers({
@@ -21,7 +22,8 @@ const reducer = combineReducers({
     servicePrice,
     showDetail,
     subjectKindName,
-    search
+    search,
+    login
 })
 
 export default reducer;

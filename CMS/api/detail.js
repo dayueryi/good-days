@@ -50,7 +50,7 @@ router.get('/activedetail',function(req,res,next){
         var showObj={};
         mysql.find(db,'activedetail',queryObj,showObj,(result)=>{
             res.send(result);
-            console.log(result)
+            // console.log(result)
             db.close()
         })
     })
@@ -61,7 +61,7 @@ router.get('/active',function(req,res,next){
         var showObj={};
         mysql.find(db,'active',queryObj,showObj,(result)=>{
             res.send(result);
-            console.log(result)
+            // console.log(result)
             db.close()
         })
     })

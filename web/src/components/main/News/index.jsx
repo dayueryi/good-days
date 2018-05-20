@@ -20,7 +20,7 @@ class News extends Component {
     
   }
   componentWillMount(){
-    console.log(this.props.match.params.pageID)
+    // console.log(this.props.match.params.pageID)
     this.setState({
       pageNum:this.props.match.params.pageID
     })
@@ -38,7 +38,7 @@ class News extends Component {
          data:data
        }
       )
-      console.log(store.getState().news,"redux")
+      // console.log(store.getState().news,"redux")
       }
      })
   }

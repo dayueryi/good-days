@@ -31,10 +31,7 @@ class Home extends Component {
     }
 
   return (
-    
         <ul className="major-list">{arrs} </ul>
-       
-     
 );      
   }
   componentDidMount() {

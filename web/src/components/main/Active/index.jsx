@@ -12,7 +12,6 @@ class Home extends Component {
         bannerlist:'',
     }
     componentDidMount(){
-       
         Active.active((data)=>{
         this.setState({
             imglist: data
@@ -25,16 +24,13 @@ class Home extends Component {
                
           })
      })
-     
     }
-    
-
     clickDate(){
         store.dispatch({
             type:"addList",
             data:"2"
         })
-        console.log(store.getState().todolist)
+        // console.log(store.getState().todolist)
     }
     render() { 
         

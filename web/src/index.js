@@ -19,7 +19,8 @@ function render(){
             </Switch>
     </Router>  
     , document.getElementById('root'));
+    
 }
-render()
-store.subscribe(render) 
+render();
+store.subscribe(render) ;
 registerServiceWorker();

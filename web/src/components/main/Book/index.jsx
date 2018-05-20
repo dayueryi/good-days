@@ -1,4 +1,3 @@
-
 import React,{Component} from 'react';
 import './index.scss';
 import Login from "./../Login/login.jsx";

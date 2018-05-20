@@ -34,7 +34,7 @@ class Home extends Component {
               type:"templateList",
               data:data
             })
-            console.log(store.getState().template,"==== =====template  ====");
+            // console.log(store.getState().template,"==== =====template  ====");
           })
       }) 
       }

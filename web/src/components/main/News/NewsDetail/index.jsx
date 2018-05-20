@@ -11,13 +11,13 @@ class Home extends Component {
         }
     }
     componentDidMount(){
-        console.log(this.props.match.params.newsID)
+        // console.log(this.props.match.params.newsID)
         var newsID = this.props.match.params.newsID;
         myajax.fetch({
             url:"http://localhost:4000/api/news?newsID="+newsID,
             option:{},
             success:(data)=>{
-                console.log(data[0])
+                // console.log(data[0])
                 this.setState(
                    { detaillist:data[0]}
                 )

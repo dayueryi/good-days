@@ -1,20 +1,25 @@
 import React, { Component } from "react";
-
 import {NavLink} from "react-router-dom";
-
 import "./index.scss";
-
 import store from '@/store/index.js';
+import login from './../../Login/login.jsx';
 
 class Subject extends Component {
   state = {
+    // isLogin:false,
     collapsed: false,
     subjectKindData:[]
   };
   addBook(a){
-    console.log(a)
-    console.log(this)
-    window.location.href="/book/"+a
+    // if(isLogin){
+      // window.location.href=;
+    // }else{
+      console.log(a+"fffffffffffffffffffffffffffffffff");
+      console.log(this);
+      console.log(login.getState());
+      // window.location.href="/book/"+a;
+    // }
+   
   }
   render() {
 
@@ -47,12 +52,12 @@ class Subject extends Component {
                             <span className="png"></span>
                             <b >立即咨询套系详情</b>
                           </NavLink>
-                          <a className="d5" href="javascript:;" onClick={this.addBook.bind(this,item.servicePriceID)}>
+                          <NavLink className="d5" to="" onClick={this.addBook.bind(this,item.servicePriceID)}>
                           
                             <span className="png">
                             </span> 
                             <b >抢订档期</b>
-                          </a>
+                          </NavLink>
                         </div>
                       </div>
                     </li>

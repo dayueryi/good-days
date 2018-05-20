@@ -9,12 +9,12 @@ class ActiveDetail extends Component{
     }
     componentDidMount(){
        var activeID = this.props.location.pathname.split("/")[2]; 
-       console.log(activeID) 
+    //    console.log(activeID) 
      Active.goodslist((data)=>{
         this.setState({
             imglist: data
           },()=>{
-              console.log(data)
+            //   console.log(data)
           })
      },activeID)
     }

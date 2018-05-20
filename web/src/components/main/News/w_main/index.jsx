@@ -14,7 +14,7 @@ class Main extends Component {
   }
   componentWillReceiveProps() {}
   render() {
-    console.log("props",this.props.newsList)
+    // console.log("props",this.props.newsList)
     if( store.getState().news){
       var arr = [];
 

@@ -61,7 +61,6 @@ class Home extends Component {
       this.getServicePriceDate(this.props.location.pathname.split("/")[2]);
       this.getServicePriceDate(0);
       if(this.props.location.pathname.split("/")[2].length === 0){
-       
         this.getServicePriceDate(0);
       }
   
